@@ -1,0 +1,12 @@
+#map-container {
+  width: 100vw;       /* ocupa todo el ancho visible */
+  height: 100vh;      /* ocupa todo el alto visible */
+  overflow: scroll;   /* habilita el scroll horizontal y vertical */
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+}
+
+#app svg {
+  width: 3000px;      /* tamaño fijo mucho más grande que la pantalla */
+  height: 2000px;
+}
