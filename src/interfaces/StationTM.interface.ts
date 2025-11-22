@@ -1,6 +1,6 @@
 import { TransportTypes } from "./types.enum";
 
-export interface InterfaceTM{
+export interface StationTMInterface{
     id: number,
     name: string,
     coords: [number,number],
