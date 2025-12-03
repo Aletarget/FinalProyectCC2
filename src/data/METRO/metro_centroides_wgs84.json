@@ -1,0 +1,98 @@
+[
+  {
+    "OBJECTID": 1,
+    "RefName": "Portal de las Am\u00e9ricas-02",
+    "centroid_lon": -82.24358045780986,
+    "centroid_lat": -3.473441068122634
+  },
+  {
+    "OBJECTID": 2,
+    "RefName": "Carrera 80-03",
+    "centroid_lon": -82.23855732675048,
+    "centroid_lat": -3.4811828151260307
+  },
+  {
+    "OBJECTID": 3,
+    "RefName": "Calle 42 Sur-04",
+    "centroid_lon": -82.23239484853698,
+    "centroid_lat": -3.4876846037145186
+  },
+  {
+    "OBJECTID": 4,
+    "RefName": "Kennedy-05",
+    "centroid_lon": -82.22365165687356,
+    "centroid_lat": -3.486215110750442
+  },
+  {
+    "OBJECTID": 5,
+    "RefName": "Av Boyaca-06",
+    "centroid_lon": -82.21280170917778,
+    "centroid_lat": -3.4851355634481744
+  },
+  {
+    "OBJECTID": 6,
+    "RefName": "Av 68-07",
+    "centroid_lon": -82.200696966402,
+    "centroid_lat": -3.495047582377972
+  },
+  {
+    "OBJECTID": 7,
+    "RefName": "Cra 50-08",
+    "centroid_lon": -82.19385461610955,
+    "centroid_lat": -3.5010181820292625
+  },
+  {
+    "OBJECTID": 8,
+    "RefName": "NQS-09",
+    "centroid_lon": -82.18348544097847,
+    "centroid_lat": -3.5063667349467917
+  },
+  {
+    "OBJECTID": 9,
+    "RefName": "Nari\u00f1o-10",
+    "centroid_lon": -82.1698475330703,
+    "centroid_lat": -3.509454391019854
+  },
+  {
+    "OBJECTID": 10,
+    "RefName": "Calle 1ra-11",
+    "centroid_lon": -82.15982173364512,
+    "centroid_lat": -3.50956172044175
+  },
+  {
+    "OBJECTID": 11,
+    "RefName": "Calle 10-12",
+    "centroid_lon": -82.15347047238502,
+    "centroid_lat": -3.5012371473395185
+  },
+  {
+    "OBJECTID": 12,
+    "RefName": "Calle 26-13",
+    "centroid_lon": -82.14675854794793,
+    "centroid_lat": -3.4907137488519933
+  },
+  {
+    "OBJECTID": 13,
+    "RefName": "Calle 45-14",
+    "centroid_lon": -82.14084006482392,
+    "centroid_lat": -3.4734929498695473
+  },
+  {
+    "OBJECTID": 14,
+    "RefName": "Calle 63-15",
+    "centroid_lon": -82.13755435813147,
+    "centroid_lat": -3.4558166396811325
+  },
+  {
+    "OBJECTID": 15,
+    "RefName": "Calle 72-16",
+    "centroid_lon": -82.1343729100324,
+    "centroid_lat": -3.44414880982974
+  },
+  {
+    "OBJECTID": 16,
+    "RefName": "Cra 96-01",
+    "centroid_lon": -82.2490292927632,
+    "centroid_lat": -3.462945647255224
+  }
+]

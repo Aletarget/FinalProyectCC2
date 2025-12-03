@@ -4,13 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Transmilenio B+ Tree</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div id="map-container">
-    <div id="app"></div>
+    
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="Buscar por ID (ej: 101) o Nombre..." />
+      <button id="search-btn">Buscar</button>
+      <button id="clear-btn">Limpiar</button>
     </div>
+
+    <div class="map-container">
+        <canvas id="map" width="1100" height="900"></canvas>
+        <div id="tooltip"></div>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

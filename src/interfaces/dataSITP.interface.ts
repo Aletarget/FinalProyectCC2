@@ -1,6 +1,6 @@
-import { InterfaceTM } from "./dataTm.interface";
+import { StationInterface } from "./Stations.interface";
 
 
-export interface InterfaceSITP extends InterfaceTM{
+export interface InterfaceSITP extends StationInterface{
     
 }
