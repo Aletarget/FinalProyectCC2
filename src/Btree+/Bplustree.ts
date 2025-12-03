@@ -18,7 +18,7 @@ export class BPlusTree<T> {
   order: number;
   root: BPlusNode<T>;
 
-  constructor(order = 4) {
+  constructor(order = 5) {
     this.order = order;
     this.root = new BPlusNode<T>(true);
   }

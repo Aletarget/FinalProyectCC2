@@ -1,0 +1,226 @@
+[
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 1,
+      "nombre": "Portal de las Américas",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1833, 4.6190]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 2,
+      "nombre": "Carrera 80",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1755, 4.6135]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 3,
+      "nombre": "Calle 42 Sur",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1668, 4.6082]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 4,
+      "nombre": "Kennedy",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1585, 4.6035]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 5,
+      "nombre": "Avenida Boyacá",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1488, 4.6005]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 6,
+      "nombre": "Avenida 68",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1355, 4.5985]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 7,
+      "nombre": "Carrera 50",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1225, 4.5995]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 8,
+      "nombre": "NQS",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.1105, 4.6015]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 9,
+      "nombre": "Nariño",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0985, 4.5955]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 10,
+      "nombre": "Calle 1",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0885, 4.5875]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 11,
+      "nombre": "Calle 10",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0825, 4.5985]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 12,
+      "nombre": "Calle 26",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0735, 4.6155]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 13,
+      "nombre": "Calle 45",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0675, 4.6325]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 14,
+      "nombre": "Calle 63",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0625, 4.6485]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 15,
+      "nombre": "Calle 72",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0585, 4.6595]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "objectid": 16,
+      "nombre": "Calle 85",
+      "linea": "Línea 1",
+      "tipo": "METRO",
+      "troncal": "Metro L1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0555, 4.6705]
+    }
+  }
+]

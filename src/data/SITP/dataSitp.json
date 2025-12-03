@@ -1,0 +1,2502 @@
+[
+    {
+    "attributes": {
+      "FID": 6708,
+      "objectid": 13509,
+      "cenefa_par": "004A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Br. Barrancas Perlas del Norte",
+      "via_parade": "AC 153",
+      "direccion_": "AC 153 - 7F",
+      "localidad_": 1,
+      "consola_pa": "AC 153 - 7F (004A01)",
+      "panel_para": "AC 153 - 7F",
+      "audio_para": "Avenida Calle 153 Séptima F",
+      "longitud_p": -74.0281419791,
+      "latitud_pa": 4.72942253476,
+      "coordenada": 1005476.8055,
+      "coordena_1": 1014732.1114,
+      "globalid": "{F8053FA8-664E-4B55-BB44-29983369CBFC}"
+    },
+    "geometry": {
+      "x": -74.02814197911435,
+      "y": 4.729422534763228
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5535,
+      "objectid": 12336,
+      "cenefa_par": "016A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Escuela de Infantería",
+      "via_parade": "AK 9",
+      "direccion_": "AK 9 - CL 104A",
+      "localidad_": 1,
+      "consola_pa": "AK 9 - CL 104A (016A01)",
+      "panel_para": "AK 9 - CL 104A",
+      "audio_para": "Avenida Carrera Novena Calle 104 A",
+      "longitud_p": -74.0425671909,
+      "latitud_pa": 4.68794817014,
+      "coordenada": 1003876.6585,
+      "coordena_1": 1010145.7053,
+      "globalid": "{C2591FE9-7C6C-4AC3-B367-0FB4D090ABAD}"
+    },
+    "geometry": {
+      "x": -74.04256719090449,
+      "y": 4.687948170136844
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7202,
+      "objectid": 14003,
+      "cenefa_par": "228B01",
+      "mdoulo_par": "B",
+      "zona_parad": 1,
+      "nombre_par": "Br. San Juan Bosco",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - AC 170",
+      "localidad_": 1,
+      "consola_pa": "AK 7 - AC 170 (228B01)",
+      "panel_para": "AK 7 - AC 170",
+      "audio_para": "Avenida Carrera Séptima Avenida Calle 170",
+      "longitud_p": -74.0227536597,
+      "latitud_pa": 4.74769574447,
+      "coordenada": 1006074.4425,
+      "coordena_1": 1016752.8425,
+      "globalid": "{E636274F-D66D-49C3-9E24-5D6B95A39B3F}"
+    },
+    "geometry": {
+      "x": -74.0227536597133,
+      "y": 4.74769574446946
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6159,
+      "objectid": 12960,
+      "cenefa_par": "200A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Universidad El Bosque",
+      "via_parade": "AK 9",
+      "direccion_": "AK 9 - CL 129",
+      "localidad_": 1,
+      "consola_pa": "AK 9 - CL 129 (200A01)",
+      "panel_para": "AK 9 - CL 129",
+      "audio_para": "Avenida Carrera Novena Calle 129",
+      "longitud_p": -74.0325932213,
+      "latitud_pa": 4.7089232747,
+      "coordenada": 1004983.1174,
+      "coordena_1": 1012465.2323,
+      "globalid": "{36EA39FE-2A62-4C3C-9455-AF1B57DA03DF}"
+    },
+    "geometry": {
+      "x": -74.03259322133702,
+      "y": 4.708923274697955
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5798,
+      "objectid": 12599,
+      "cenefa_par": "BD-058B",
+      "mdoulo_par": "0",
+      "zona_parad": 1,
+      "nombre_par": "Fundación Santa Fe de Bogotá",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - CL 118",
+      "localidad_": 1,
+      "consola_pa": "AK 7 - CL 118 (BD-058B)",
+      "panel_para": "AK 7 - CL 118",
+      "audio_para": "Avenida Carrera Séptima Calle 118",
+      "longitud_p": -74.0324689998,
+      "latitud_pa": 4.69548099969,
+      "coordenada": 1004996.9951,
+      "coordena_1": 1010978.7626,
+      "globalid": "{A355422F-580D-4ADB-9D9E-0746107FBD2E}"
+    },
+    "geometry": {
+      "x": -74.03246899985353,
+      "y": 4.695480999692482
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6139,
+      "objectid": 12940,
+      "cenefa_par": "031A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Calle 127A",
+      "via_parade": "AK 19",
+      "direccion_": "AK 19 - CL 127A",
+      "localidad_": 1,
+      "consola_pa": "AK 19 - CL 127A (031A01)",
+      "panel_para": "AK 19 - CL 127A",
+      "audio_para": "Avenida Carrera 19 Calle 127 A",
+      "longitud_p": -74.0486721124,
+      "latitud_pa": 4.70807082636,
+      "coordenada": 1003199.2283,
+      "coordena_1": 1012370.8728,
+      "globalid": "{5A104D4B-1E86-4933-A7E2-25FF320B8157}"
+    },
+    "geometry": {
+      "x": -74.04867211238398,
+      "y": 4.708070826357315
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6007,
+      "objectid": 12808,
+      "cenefa_par": "508A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Parroquia Nuestra señora de Montecarmelo",
+      "via_parade": "CL 127A",
+      "direccion_": "TV 5C - CL 127A Bis B",
+      "localidad_": 1,
+      "consola_pa": "TV 5C - CL 127A Bis B (508A01)",
+      "panel_para": "TV 5C - CL 127A Bis B",
+      "audio_para": "Transversal Quinta C Calle 127 A Bis Be",
+      "longitud_p": -74.0272631494,
+      "latitud_pa": 4.70326432669,
+      "coordenada": 1005574.5141,
+      "coordena_1": 1011839.496,
+      "globalid": "{946F662A-C473-477D-926C-021FE9D2231C}"
+    },
+    "geometry": {
+      "x": -74.02726314944485,
+      "y": 4.703264326693937
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7561,
+      "objectid": 14362,
+      "cenefa_par": "343A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Br. Tibabita",
+      "via_parade": "CL 193",
+      "direccion_": "CL 193 - KR 8",
+      "localidad_": 1,
+      "consola_pa": "CL 193 - KR 8 (343A01)",
+      "panel_para": "CL 193 - KR 8",
+      "audio_para": "Calle 193 Carrera Octava",
+      "longitud_p": -74.0292385255,
+      "latitud_pa": 4.76989663417,
+      "coordenada": 1005354.8391,
+      "coordena_1": 1019207.8068,
+      "globalid": "{734D18F4-BF7E-4CD4-A4B9-D4F41CC57BD0}"
+    },
+    "geometry": {
+      "x": -74.02923852554109,
+      "y": 4.769896634169766
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7535,
+      "objectid": 14336,
+      "cenefa_par": "464A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Br. Tibabita",
+      "via_parade": "AK 9",
+      "direccion_": "AK 9 - CL 189A",
+      "localidad_": 1,
+      "consola_pa": "AK 9 - CL 189A (464A01)",
+      "panel_para": "AK 9 - CL 189A",
+      "audio_para": "Avenida Carrera Novena Calle 189 A",
+      "longitud_p": -74.0310335253,
+      "latitud_pa": 4.76671834333,
+      "coordenada": 1005155.7317,
+      "coordena_1": 1018856.3314,
+      "globalid": "{6B7D6C8C-CACB-46D3-93D2-D7DE3DAA705E}"
+    },
+    "geometry": {
+      "x": -74.03103352526671,
+      "y": 4.76671834333106
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7207,
+      "objectid": 14008,
+      "cenefa_par": "226A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Colegio Anglo Americano",
+      "via_parade": "AC 170",
+      "direccion_": "AC 170 - KR 8A",
+      "localidad_": 1,
+      "consola_pa": "AC 170 - KR 8A (226A01)",
+      "panel_para": "AC 170 - KR 8A",
+      "audio_para": "Avenida Calle 170 Carrera Octava A",
+      "longitud_p": -74.0279662572,
+      "latitud_pa": 4.74775766836,
+      "coordenada": 1005496.1558,
+      "coordena_1": 1016759.6466,
+      "globalid": "{DDFFC72F-1131-405C-93E3-AC82D2436472}"
+    },
+    "geometry": {
+      "x": -74.02796625716297,
+      "y": 4.747757668363194
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6392,
+      "objectid": 13193,
+      "cenefa_par": "322A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Br. Verbenal",
+      "via_parade": "Cl 140",
+      "direccion_": "CL 140 - KR 7A",
+      "localidad_": 1,
+      "consola_pa": "CL 140 - KR 7A (322A01)",
+      "panel_para": "CL 140 - KR 7A",
+      "audio_para": "Calle 140 Carrera Séptima A",
+      "longitud_p": -74.0297100411,
+      "latitud_pa": 4.71656728828,
+      "coordenada": 1005302.9376,
+      "coordena_1": 1013310.5424,
+      "globalid": "{58299444-AB7E-4233-9062-8089AB7E7ECD}"
+    },
+    "geometry": {
+      "x": -74.02971004105395,
+      "y": 4.716567288275178
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7523,
+      "objectid": 14324,
+      "cenefa_par": "066A01",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Br. Tibabita",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - CL 189",
+      "localidad_": 1,
+      "consola_pa": "AK 7 - CL 189 (066A01)",
+      "panel_para": "AK 7 - CL 189",
+      "audio_para": "Avenida Carrera Séptima Calle 189",
+      "longitud_p": -74.0275926381,
+      "latitud_pa": 4.76587447005,
+      "coordenada": 1005537.4604,
+      "coordena_1": 1018763.0409,
+      "globalid": "{A282094A-F7D6-4A38-A2A9-4154BB77EE0A}"
+    },
+    "geometry": {
+      "x": -74.02759263815224,
+      "y": 4.76587447004524
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3651,
+      "objectid": 10452,
+      "cenefa_par": "383A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Universidad Javeriana",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - CL 43",
+      "localidad_": 2,
+      "consola_pa": "AK 7 - CL 43 (383A00)",
+      "panel_para": "AK 7 - CL 43",
+      "audio_para": "Avenida Carrera Séptima Calle 43",
+      "longitud_p": -74.0644108363,
+      "latitud_pa": 4.63050875025,
+      "coordenada": 1001453.2333,
+      "coordena_1": 1003793.879,
+      "globalid": "{79AA7EED-C8EA-4295-92AE-048AC86FE585}"
+    },
+    "geometry": {
+      "x": -74.06441083627732,
+      "y": 4.630508750247586
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4267,
+      "objectid": 11068,
+      "cenefa_par": "825A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Br. La Salle",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - CL 60A",
+      "localidad_": 2,
+      "consola_pa": "AK 7 - CL 60A (825A00)",
+      "panel_para": "AK 7 - CL 60A",
+      "audio_para": "Avenida Carrera Séptima Calle 60 A",
+      "longitud_p": -74.0607727338,
+      "latitud_pa": 4.64595852328,
+      "coordenada": 1001856.8716,
+      "coordena_1": 1005502.3472,
+      "globalid": "{EF6761C3-0B61-4485-80E3-9E867133F5F7}"
+    },
+    "geometry": {
+      "x": -74.0607727338286,
+      "y": 4.645958523275942
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4022,
+      "objectid": 10823,
+      "cenefa_par": "262A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Br. Quesada",
+      "via_parade": "AVENIDA Cl 53",
+      "direccion_": "AC 53 - KR 13",
+      "localidad_": 2,
+      "consola_pa": "AC 53 - KR 13 (262A00)",
+      "panel_para": "AC 53 - KR 13",
+      "audio_para": "Avenida Calle 53 Carrera 13",
+      "longitud_p": -74.065600396,
+      "latitud_pa": 4.64017463681,
+      "coordenada": 1001321.2235,
+      "coordena_1": 1004862.7452,
+      "globalid": "{9FB0282D-0DFA-46C3-B4E7-8C85338282A2}"
+    },
+    "geometry": {
+      "x": -74.06560039601318,
+      "y": 4.640174636806788
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4818,
+      "objectid": 11619,
+      "cenefa_par": "040A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Br. El Refugio",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - AC 85",
+      "localidad_": 2,
+      "consola_pa": "AK 7 - AC 85 (040A00)",
+      "panel_para": "AK 7 - AC 85",
+      "audio_para": "Avenida Carrera Séptima Avenida Calle 85",
+      "longitud_p": -74.0460003218,
+      "latitud_pa": 4.66654425278,
+      "coordenada": 1003495.8602,
+      "coordena_1": 1007778.8062,
+      "globalid": "{A24A7509-FD4B-42E3-9AB3-63E697A102A1}"
+    },
+    "geometry": {
+      "x": -74.04600032177281,
+      "y": 4.6665442527844165
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5212,
+      "objectid": 12013,
+      "cenefa_par": "887A00",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Chicó Reservado",
+      "via_parade": "CL 97A",
+      "direccion_": "CL 97A - KR 9",
+      "localidad_": 2,
+      "consola_pa": "CL 97A - KR 9 (887A00)",
+      "panel_para": "CL 97A - KR 9",
+      "audio_para": "Calle 97 A Carrera Novena",
+      "longitud_p": -74.0420400002,
+      "latitud_pa": 4.67944900045,
+      "coordenada": 1003935.1976,
+      "coordena_1": 1009205.8556,
+      "globalid": "{944F02B9-DABA-4A14-8DE6-200867548CAD}"
+    },
+    "geometry": {
+      "x": -74.04204000016496,
+      "y": 4.679449000445973
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4161,
+      "objectid": 10962,
+      "cenefa_par": "819A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Br. Chapinero Central",
+      "via_parade": "AK 7",
+      "direccion_": "AK 7 - AC 57",
+      "localidad_": 2,
+      "consola_pa": "AK 7 - AC 57 (819A00)",
+      "panel_para": "AK 7 - AC 57",
+      "audio_para": "Avenida Carrera Séptima Avenida Calle 57",
+      "longitud_p": -74.0619327847,
+      "latitud_pa": 4.64349687092,
+      "coordenada": 1001728.1628,
+      "coordena_1": 1005230.1309,
+      "globalid": "{EA474C7D-26E5-4D07-B4E0-603ABCB6B56E}"
+    },
+    "geometry": {
+      "x": -74.06193278470418,
+      "y": 4.643496870919996
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2805,
+      "objectid": 9606,
+      "cenefa_par": "845A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Br. La Macarena",
+      "via_parade": "KR 4",
+      "direccion_": "KR 4 - CL 26B",
+      "localidad_": 3,
+      "consola_pa": "KR 4 - CL 26B (845A00)",
+      "panel_para": "KR 4 - CL 26B",
+      "audio_para": "Carrera Cuarta Calle 26 Be",
+      "longitud_p": -74.0659391149,
+      "latitud_pa": 4.61343819637,
+      "coordenada": 1001283.6884,
+      "coordena_1": 1001906.1888,
+      "globalid": "{247BF2CF-2FE2-4E74-B709-B592B8C26373}"
+    },
+    "geometry": {
+      "x": -74.06593911491657,
+      "y": 4.613438196368789
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2456,
+      "objectid": 9257,
+      "cenefa_par": "243B00",
+      "mdoulo_par": "B",
+      "zona_parad": 0,
+      "nombre_par": "Br. Veracruz",
+      "via_parade": "AC 19",
+      "direccion_": "AC 19 - KR 8",
+      "localidad_": 3,
+      "consola_pa": "AC 19 - KR 8 (243B00)",
+      "panel_para": "AC 19 - KR 8",
+      "audio_para": "Avenida Calle 19 Carrera Octava",
+      "longitud_p": -74.0735119373,
+      "latitud_pa": 4.60643419952,
+      "coordenada": 1000443.4031,
+      "coordena_1": 1001131.6675,
+      "globalid": "{D25F9BAC-0A06-47DF-B8B9-C2E0A89BE4BA}"
+    },
+    "geometry": {
+      "x": -74.07351193729606,
+      "y": 4.606434199515183
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1728,
+      "objectid": 8529,
+      "cenefa_par": "348A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "IED Jorge Soto del Corral",
+      "via_parade": "Tv 3A E",
+      "direccion_": "TV 3A E - DG 2D",
+      "localidad_": 3,
+      "consola_pa": "TV 3A E - DG 2D (348A13)",
+      "panel_para": "TV 3A E - DG 2D",
+      "audio_para": "Transversal Tercera A Este Diagonal Segunda D",
+      "longitud_p": -74.0713797954,
+      "latitud_pa": 4.58732664968,
+      "coordenada": 1000680.0086,
+      "coordena_1": 999018.7294,
+      "globalid": "{82C4B8C6-7FF5-4B79-B1E8-2E60F971F5AE}"
+    },
+    "geometry": {
+      "x": -74.07137979541695,
+      "y": 4.587326649675719
+    }
+  },
+  {
+    "attributes": {
+      "FID": 749,
+      "objectid": 7550,
+      "cenefa_par": "366A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Br. Las Guacamayas",
+      "via_parade": "Tv 1C",
+      "direccion_": "KR 1B - CL 38 - 39 Sur",
+      "localidad_": 4,
+      "consola_pa": "KR 1B - CL 38 - 39 Sur (366A13)",
+      "panel_para": "KR 1B - CL 38 - 39 Sur",
+      "audio_para": "Carrera Primera Be Calle 38 Sur",
+      "longitud_p": -74.0977570341,
+      "latitud_pa": 4.55345973074,
+      "coordenada": 997752.9458,
+      "coordena_1": 995273.7092,
+      "globalid": "{127B771F-42CE-4C6A-A582-7ACE4534C9D5}"
+    },
+    "geometry": {
+      "x": -74.09775703414373,
+      "y": 4.553459730743138
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1291,
+      "objectid": 8092,
+      "cenefa_par": "260A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Br. San Cristóbal Sur",
+      "via_parade": "AC 11 Sur",
+      "direccion_": "AC 11 Sur - KR 3 Este",
+      "localidad_": 4,
+      "consola_pa": "AC 11 Sur - KR 3 Este (260A13)",
+      "panel_para": "AC 11 Sur - KR 3 Este",
+      "audio_para": "Avenida Calle 11 Sur Carrera Tercera Este",
+      "longitud_p": -74.079982,
+      "latitud_pa": 4.57320399998,
+      "coordenada": 999725.4573,
+      "coordena_1": 997457.0252,
+      "globalid": "{12520C34-C71E-4FBC-8F81-8C7E4A15A661}"
+    },
+    "geometry": {
+      "x": -74.07998200001772,
+      "y": 4.573203999979843
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1237,
+      "objectid": 8038,
+      "cenefa_par": "095A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Br. 20 de Julio",
+      "via_parade": "KR 8",
+      "direccion_": "KR 8 - CL 26 Sur",
+      "localidad_": 4,
+      "consola_pa": "KR 8 - CL 26 Sur (095A13)",
+      "panel_para": "KR 8 - CL 26 Sur",
+      "audio_para": "Carrera Octava Calle 26 Sur",
+      "longitud_p": -74.0960559205,
+      "latitud_pa": 4.57119662066,
+      "coordenada": 997941.7697,
+      "coordena_1": 997235.0726,
+      "globalid": "{2CE49ECB-214E-4F7A-89C7-CC044C6AD391}"
+    },
+    "geometry": {
+      "x": -74.09605592052434,
+      "y": 4.571196620661187
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1418,
+      "objectid": 8219,
+      "cenefa_par": "216A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Estación Av. 1 de Mayo",
+      "via_parade": "CL 17 Sur",
+      "direccion_": "CL 17 Sur - KR 9A",
+      "localidad_": 4,
+      "consola_pa": "CL 17 Sur - KR 9A (216A13)",
+      "panel_para": "CL 17 Sur - KR 9A",
+      "audio_para": "Calle 17 Sur Carrera Novena A",
+      "longitud_p": -74.0919310002,
+      "latitud_pa": 4.57770700009,
+      "coordenada": 998399.5173,
+      "coordena_1": 997954.9886,
+      "globalid": "{5391B38A-FB27-44A1-B295-527ED5899857}"
+    },
+    "geometry": {
+      "x": -74.09193100021784,
+      "y": 4.577707000092681
+    }
+  },
+  {
+    "attributes": {
+      "FID": 822,
+      "objectid": 7623,
+      "cenefa_par": "185A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Urb. Las Guacamayas",
+      "via_parade": "Cl 36O S",
+      "direccion_": "CL 37A Sur - KR 2C - 10",
+      "localidad_": 4,
+      "consola_pa": "CL 37A Sur - KR 2C - 10 (185A13)",
+      "panel_para": "CL 37A Sur - KR 2C - 10",
+      "audio_para": "Calle 37 A Sur Carrera Segunda C",
+      "longitud_p": -74.0978584987,
+      "latitud_pa": 4.55697566274,
+      "coordenada": 997741.6972,
+      "coordena_1": 995662.5058,
+      "globalid": "{0D98B42C-2F8C-4A22-894C-2E291AF7EBA8}"
+    },
+    "geometry": {
+      "x": -74.09785849867195,
+      "y": 4.5569756627354945
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1176,
+      "objectid": 7977,
+      "cenefa_par": "565A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Br. San Cristóbal Alto",
+      "via_parade": "KR 18 Este",
+      "direccion_": "KR 18 Este - CL 12 Sur",
+      "localidad_": 4,
+      "consola_pa": "KR 18 Este - CL 12 Sur (565A13)",
+      "panel_para": "KR 18 Este - CL 12 Sur",
+      "audio_para": "Carrera 18 Este Calle 12 Sur",
+      "longitud_p": -74.0744150003,
+      "latitud_pa": 4.56965700007,
+      "coordenada": 1000343.2147,
+      "coordena_1": 997064.7935,
+      "globalid": "{1F9FCB5A-AEB0-4B3C-9F07-4B8003D133A2}"
+    },
+    "geometry": {
+      "x": -74.07441500033772,
+      "y": 4.569657000073151
+    }
+  },
+  {
+    "attributes": {
+      "FID": 342,
+      "objectid": 7143,
+      "cenefa_par": "075A13",
+      "mdoulo_par": "A",
+      "zona_parad": 13,
+      "nombre_par": "Pq. Los Libertadores",
+      "via_parade": "KR 11 E",
+      "direccion_": "KR 11 E - CL 56 Sur",
+      "localidad_": 4,
+      "consola_pa": "KR 11 E - CL 56 Sur (075A13)",
+      "panel_para": "KR 11 E - CL 56 Sur",
+      "audio_para": "Carrera 11 Este Calle 56 Sur",
+      "longitud_p": -74.0907543996,
+      "latitud_pa": 4.53262031389,
+      "coordenada": 998529.9893,
+      "coordena_1": 992969.2425,
+      "globalid": "{44F49F93-DD39-4A18-8FB6-D509016BA47E}"
+    },
+    "geometry": {
+      "x": -74.09075439963706,
+      "y": 4.532620313886843
+    }
+  },
+  {
+    "attributes": {
+      "FID": 178,
+      "objectid": 6979,
+      "cenefa_par": "216A12",
+      "mdoulo_par": "A",
+      "zona_parad": 12,
+      "nombre_par": "Br. Yomasita",
+      "via_parade": "KR 7C E",
+      "direccion_": "KR 7C E - CL 81 Bis Sur",
+      "localidad_": 5,
+      "consola_pa": "KR 7C E - CL 81 Bis Sur (216A12)",
+      "panel_para": "KR 7C E - CL 81 Bis Sur",
+      "audio_para": "Carrera Séptima C Este Calle 81 Bis Sur",
+      "longitud_p": -74.099894247,
+      "latitud_pa": 4.50773179668,
+      "coordenada": 997515.6222,
+      "coordena_1": 990217.0658,
+      "globalid": "{D0E8A2C7-E401-4B53-BD7A-7A8EEE2469FA}"
+    },
+    "geometry": {
+      "x": -74.09989424697257,
+      "y": 4.507731796680305
+    }
+  },
+  {
+    "attributes": {
+      "FID": 177,
+      "objectid": 6978,
+      "cenefa_par": "529A12",
+      "mdoulo_par": "A",
+      "zona_parad": 12,
+      "nombre_par": "Br. La Esperanza",
+      "via_parade": "TV 1 Este",
+      "direccion_": "TV 1 Este - CL 83 Sur",
+      "localidad_": 5,
+      "consola_pa": "TV 1 Este - CL 83 Sur (529A12)",
+      "panel_para": "TV 1 Este - CL 83 Sur",
+      "audio_para": "Transveral Primera Este Calle 83 Sur",
+      "longitud_p": -74.1047540002,
+      "latitud_pa": 4.5076699999,
+      "coordenada": 996976.2989,
+      "coordena_1": 990210.2506,
+      "globalid": "{6D3EB516-9E15-4832-BDB4-4BF7AF981965}"
+    },
+    "geometry": {
+      "x": -74.1047540001848,
+      "y": 4.5076699998986145
+    }
+  },
+  {
+    "attributes": {
+      "FID": 154,
+      "objectid": 6955,
+      "cenefa_par": "202A12",
+      "mdoulo_par": "A",
+      "zona_parad": 12,
+      "nombre_par": "Br. El Líbano",
+      "via_parade": "CL 87B Sur",
+      "direccion_": "CL 87B Sur - TV 2C",
+      "localidad_": 5,
+      "consola_pa": "CL 87B Sur - TV 2C (202A12)",
+      "panel_para": "CL 87B Sur - TV 2C",
+      "audio_para": "Diagonal 84 Be Sur Cuarta A Este",
+      "longitud_p": -74.106012432,
+      "latitud_pa": 4.50523579792,
+      "coordenada": 996836.6308,
+      "coordena_1": 989941.0791,
+      "globalid": "{FB50F950-17C7-4C16-BA84-A481221E0877}"
+    },
+    "geometry": {
+      "x": -74.10601243202264,
+      "y": 4.505235797924616
+    }
+  },
+  {
+    "attributes": {
+      "FID": 241,
+      "objectid": 7042,
+      "cenefa_par": "478A12",
+      "mdoulo_par": "A",
+      "zona_parad": 12,
+      "nombre_par": "Br. Santa Librada",
+      "via_parade": "KR 9A",
+      "direccion_": "KR 9A - CL 75 Bis Sur",
+      "localidad_": 5,
+      "consola_pa": "KR 9A - CL 75 Bis Sur (478A12)",
+      "panel_para": "KR 9A - CL 75 Bis Sur",
+      "audio_para": "Carrera Novena A Calle 75 Bis Sur",
+      "longitud_p": -74.1129117167,
+      "latitud_pa": 4.51486142974,
+      "coordenada": 996071.0148,
+      "coordena_1": 991005.5262,
+      "globalid": "{C62A2A85-FB91-4320-A9BF-A588D93CEF5B}"
+    },
+    "geometry": {
+      "x": -74.11291171673238,
+      "y": 4.51486142973685
+    }
+  },
+  {
+    "attributes": {
+      "FID": 911,
+      "objectid": 7712,
+      "cenefa_par": "353A11",
+      "mdoulo_par": "A",
+      "zona_parad": 11,
+      "nombre_par": "Br. Tunjuelito",
+      "via_parade": "KR 16B",
+      "direccion_": "AK 16B - CL 59-34 Sur",
+      "localidad_": 6,
+      "consola_pa": "AK 16B - CL 59-34 Sur (353A11)",
+      "panel_para": "AK 16B - CL 59-34 Sur",
+      "audio_para": "Avenida Carrera 16 Be Calle 59 Sur",
+      "longitud_p": -74.1315829554,
+      "latitud_pa": 4.56080826402,
+      "coordenada": 993999.3274,
+      "coordena_1": 996086.5131,
+      "globalid": "{8E42C84F-D32B-49B8-B9A2-4D0A71874570}"
+    },
+    "geometry": {
+      "x": -74.131582955393,
+      "y": 4.560808264015327
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1141,
+      "objectid": 7942,
+      "cenefa_par": "078A11",
+      "mdoulo_par": "A",
+      "zona_parad": 11,
+      "nombre_par": "Pq. El Tunal",
+      "via_parade": "CL 53 Sur",
+      "direccion_": "CL 53 Sur - KR 19A",
+      "localidad_": 6,
+      "consola_pa": "CL 53 Sur - KR 19A (078A11)",
+      "panel_para": "CL 53 Sur - KR 19A",
+      "audio_para": "Calle 53 Sur Carrera 19 A",
+      "longitud_p": -74.1314871449,
+      "latitud_pa": 4.56877624356,
+      "coordenada": 994010.0255,
+      "coordena_1": 996967.6223,
+      "globalid": "{F3143A1C-D7E5-4072-A98B-9DD9BA085C26}"
+    },
+    "geometry": {
+      "x": -74.13148714487983,
+      "y": 4.5687762435580455
+    }
+  },
+  {
+    "attributes": {
+      "FID": 1878,
+      "objectid": 8679,
+      "cenefa_par": "033A10",
+      "mdoulo_par": "A",
+      "zona_parad": 10,
+      "nombre_par": "Br. La Laguna",
+      "via_parade": "AK 53",
+      "direccion_": "KR 53 - DG 49 Sur",
+      "localidad_": 6,
+      "consola_pa": "KR 53 - DG 49 Sur (033A10)",
+      "panel_para": "KR 53 - DG 49 Sur",
+      "audio_para": "Carrera 53 Diagonal 49 Sur",
+      "longitud_p": -74.1384181622,
+      "latitud_pa": 4.59131429395,
+      "coordenada": 993241.1147,
+      "coordena_1": 999459.9733,
+      "globalid": "{B9E4FA56-9781-48B0-8FD3-15E3BE409F4F}"
+    },
+    "geometry": {
+      "x": -74.13841816223048,
+      "y": 4.591314293953849
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3808,
+      "objectid": 10609,
+      "cenefa_par": "281A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Br. Villa Esmeralda",
+      "via_parade": "CL 56F Sur",
+      "direccion_": "CL 56F Sur - KR 93C",
+      "localidad_": 7,
+      "consola_pa": "CL 56F Sur - KR 93C (281A08)",
+      "panel_para": "CL 56F Sur - KR 93C",
+      "audio_para": "Calle 56 F Sur Carrera 93 C",
+      "longitud_p": -74.1906759108,
+      "latitud_pa": 4.63456822163,
+      "coordenada": 987443.1049,
+      "coordena_1": 1004243.7701,
+      "globalid": "{05539252-185F-446F-9958-F06597E29B92}"
+    },
+    "geometry": {
+      "x": -74.1906759108411,
+      "y": 4.63456822162791
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2523,
+      "objectid": 9324,
+      "cenefa_par": "132A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. La Primavera",
+      "via_parade": "KR 78 F",
+      "direccion_": "KR 78F - CL 75A Sur",
+      "localidad_": 7,
+      "consola_pa": "KR 78F - CL 75A Sur (132A09)",
+      "panel_para": "KR 78F - CL 75A Sur",
+      "audio_para": "Carrera 78 F Calle 75 A Sur",
+      "longitud_p": -74.2053339982,
+      "latitud_pa": 4.60768112322,
+      "coordenada": 985816.1358,
+      "coordena_1": 1001270.8239,
+      "globalid": "{71AA14E1-A994-4ED7-9E22-F6D21ED09F36}"
+    },
+    "geometry": {
+      "x": -74.20533399816331,
+      "y": 4.607681123220264
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2174,
+      "objectid": 8975,
+      "cenefa_par": "161A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. San Pablo II Sector",
+      "via_parade": "Cl 69B S",
+      "direccion_": "CL 69B Sur - TV 77J",
+      "localidad_": 7,
+      "consola_pa": "CL 69B Sur - TV 77J (161A09)",
+      "panel_para": "CL 69B Sur - TV 77J",
+      "audio_para": "Calle 69 Be Sur Transversal 77 J",
+      "longitud_p": -74.1903623465,
+      "latitud_pa": 4.59999351272,
+      "coordenada": 987477.2912,
+      "coordena_1": 1000420.435,
+      "globalid": "{8D20426C-831D-47A5-B369-F45457C4ED72}"
+    },
+    "geometry": {
+      "x": -74.19036234647332,
+      "y": 4.599993512723186
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3821,
+      "objectid": 10622,
+      "cenefa_par": "231A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Br. Ciudadela El Recreo",
+      "via_parade": "KR 100",
+      "direccion_": "KR 100 - CL 73 Sur",
+      "localidad_": 7,
+      "consola_pa": "KR 100 - CL 73 Sur (231A08)",
+      "panel_para": "KR 100 - CL 73 Sur",
+      "audio_para": "Carrera 100 Calle 73 Sur",
+      "longitud_p": -74.2043011068,
+      "latitud_pa": 4.63485679895,
+      "coordenada": 985931.2837,
+      "coordena_1": 1004275.9373,
+      "globalid": "{CC4D9870-30D0-43A2-850A-051B271BD1CE}"
+    },
+    "geometry": {
+      "x": -74.20430110676426,
+      "y": 4.634856798947615
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2861,
+      "objectid": 9662,
+      "cenefa_par": "669A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. San Pedro",
+      "via_parade": "CL 73D Sur",
+      "direccion_": "CL 73D Sur - KR 82H",
+      "localidad_": 7,
+      "consola_pa": "CL 73D Sur - KR 82H (669A09)",
+      "panel_para": "CL 73D Sur - KR 82H",
+      "audio_para": "Calle 73 D Sur Carrera 82 H",
+      "longitud_p": -74.1983019998,
+      "latitud_pa": 4.61442800017,
+      "coordenada": 986596.5495,
+      "coordena_1": 1002016.769,
+      "globalid": "{B222E2DA-B7C4-4AC8-A444-70E44934EF4D}"
+    },
+    "geometry": {
+      "x": -74.19830199975353,
+      "y": 4.614428000167879
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2622,
+      "objectid": 9423,
+      "cenefa_par": "102B09",
+      "mdoulo_par": "B",
+      "zona_parad": 9,
+      "nombre_par": "Urb. Clarelandia del Sur",
+      "via_parade": "Av. Agoberto Mejía",
+      "direccion_": "AV. A. Mejía - CL 58J Sur",
+      "localidad_": 7,
+      "consola_pa": "AV. A. Mejía - CL 58J Sur (102B09)",
+      "panel_para": "AV. A. Mejía - CL 58J Sur",
+      "audio_para": "Avenida Agoberto Mejía Calle 58 J Sur",
+      "longitud_p": -74.1802947745,
+      "latitud_pa": 4.6096471595,
+      "coordenada": 988594.578,
+      "coordena_1": 1001487.7822,
+      "globalid": "{71FDFA3C-A99A-466E-8047-5ADA7A17FB88}"
+    },
+    "geometry": {
+      "x": -74.18029477447139,
+      "y": 4.609647159496312
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2560,
+      "objectid": 9361,
+      "cenefa_par": "494A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. Gran Colombiano I Sector",
+      "via_parade": "CL 74 Sur",
+      "direccion_": "CL 74 Sur - TV 79D",
+      "localidad_": 7,
+      "consola_pa": "CL 74 Sur - TV 79D (494A09)",
+      "panel_para": "CL 74 Sur - TV 79D",
+      "audio_para": "Calle 74 Sur 79 Be",
+      "longitud_p": -74.2012099264,
+      "latitud_pa": 4.60849296272,
+      "coordenada": 986273.7682,
+      "coordena_1": 1001360.5178,
+      "globalid": "{87B76F9D-7E4B-4238-8E57-B9EF75C06717}"
+    },
+    "geometry": {
+      "x": -74.20120992637801,
+      "y": 4.60849296272368
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3877,
+      "objectid": 10678,
+      "cenefa_par": "295A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Parcela El Porvenir",
+      "via_parade": "CL 52 Sur",
+      "direccion_": "CL 52 Sur - KR 92A",
+      "localidad_": 7,
+      "consola_pa": "CL 52 Sur - KR 92A (295A08)",
+      "panel_para": "CL 52 Sur - KR 92A",
+      "audio_para": "Calle 52 Sur Carrera 92 A",
+      "longitud_p": -74.1847982546,
+      "latitud_pa": 4.63615755194,
+      "coordenada": 988095.3053,
+      "coordena_1": 1004419.4196,
+      "globalid": "{0B97EC48-1131-4123-AE97-B641B4E291B4}"
+    },
+    "geometry": {
+      "x": -74.18479825457699,
+      "y": 4.6361575519351454
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7634,
+      "objectid": 14847,
+      "cenefa_par": "663A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Portal Américas",
+      "via_parade": "CLL 48 Sur",
+      "direccion_": "CLL 48 Sur - AV. C. de Cali",
+      "localidad_": 8,
+      "consola_pa": "CLL 48 Sur - AV. C. de Cali (663A08)",
+      "panel_para": "CLL 48 Sur - AV. C. de Cali",
+      "audio_para": "Calle 48 Sur Avenida Ciudad de Cali",
+      "longitud_p": -74.1739130009,
+      "latitud_pa": 4.627780552,
+      "coordenada": 989302.9839,
+      "coordena_1": 1003492.9034,
+      "globalid": "{84823B05-878D-4AB2-BF5C-AEB54403F5E8}"
+    },
+    "geometry": {
+      "x": -74.1739130009419,
+      "y": 4.627780552000706
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3664,
+      "objectid": 10465,
+      "cenefa_par": "335A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "C.C. Milenio Plaza",
+      "via_parade": "CL 42A S",
+      "direccion_": "CL 42A Sur - AV. C. de Cali",
+      "localidad_": 8,
+      "consola_pa": "CL 42A Sur - AV. C. de Cali (335A08)",
+      "panel_para": "CL 42A Sur - AV. C. de Cali",
+      "audio_para": "Calle 42 A Sur Avenida Ciudad de Cali",
+      "longitud_p": -74.1683211598,
+      "latitud_pa": 4.63092772875,
+      "coordenada": 989923.4943,
+      "coordena_1": 1003840.8416,
+      "globalid": "{0D1FC510-FE10-435E-BF1F-E3F176583996}"
+    },
+    "geometry": {
+      "x": -74.16832115985481,
+      "y": 4.6309277287501995
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4038,
+      "objectid": 10839,
+      "cenefa_par": "447A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "IED Patio Bonito I",
+      "via_parade": "CL 5A",
+      "direccion_": "CL 5A Sur - KR 87D",
+      "localidad_": 8,
+      "consola_pa": "CL 5A Sur - KR 87D (447A08)",
+      "panel_para": "CL 5A Sur - KR 87D",
+      "audio_para": "Calle Quinta A Sur Carrera 87 D",
+      "longitud_p": -74.1610478533,
+      "latitud_pa": 4.64056374322,
+      "coordenada": 990730.656,
+      "coordena_1": 1004906.3088,
+      "globalid": "{AA72C870-0A34-46A7-AB3F-0D86901C6533}"
+    },
+    "geometry": {
+      "x": -74.1610478533194,
+      "y": 4.640563743221776
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4171,
+      "objectid": 10972,
+      "cenefa_par": "405A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Br. Bellavista",
+      "via_parade": "CL 40 S",
+      "direccion_": "CL 40 Sur - KR 93 B",
+      "localidad_": 8,
+      "consola_pa": "CL 40 Sur - KR 93 B (405A08)",
+      "panel_para": "CL 40 Sur - KR 93 B",
+      "audio_para": "Calle 40 Sur Carrera 93 Be",
+      "longitud_p": -74.1722133244,
+      "latitud_pa": 4.64373826391,
+      "coordenada": 989491.8143,
+      "coordena_1": 1005257.5086,
+      "globalid": "{56382995-5BF8-4768-8C96-92ABC1464FC7}"
+    },
+    "geometry": {
+      "x": -74.1722133243725,
+      "y": 4.643738263905879
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2318,
+      "objectid": 9119,
+      "cenefa_par": "510A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. Alquería La Fragua",
+      "via_parade": "AK 68",
+      "direccion_": "AK 68 - CL 37 Sur",
+      "localidad_": 8,
+      "consola_pa": "AK 68 - CL 37 Sur (510A09)",
+      "panel_para": "AK 68 - CL 37 Sur",
+      "audio_para": "Avenida Carrera 68 Calle 37 Sur",
+      "longitud_p": -74.1328119114,
+      "latitud_pa": 4.60354336916,
+      "coordenada": 993863.3153,
+      "coordena_1": 1000812.2318,
+      "globalid": "{C9B68A27-2C8D-48C7-838C-41F0BDEE69D4}"
+    },
+    "geometry": {
+      "x": -74.13281191140345,
+      "y": 4.60354336915757
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2611,
+      "objectid": 9412,
+      "cenefa_par": "330A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. Las Luces",
+      "via_parade": "Cl 52A S",
+      "direccion_": "CL 52A Sur - KR 77V Bis",
+      "localidad_": 8,
+      "consola_pa": "CL 52A Sur - KR 77V Bis (330A09)",
+      "panel_para": "CL 52A Sur - KR 77V Bis",
+      "audio_para": "Calle 52 A Sur Carrera 77 Ve Bis",
+      "longitud_p": -74.1686186921,
+      "latitud_pa": 4.60944955684,
+      "coordenada": 989890.1763,
+      "coordena_1": 1001465.7548,
+      "globalid": "{86E517B2-E7D7-4E14-ABD5-E7D627A50819}"
+    },
+    "geometry": {
+      "x": -74.16861869211587,
+      "y": 4.609449556838517
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4140,
+      "objectid": 10941,
+      "cenefa_par": "200A07",
+      "mdoulo_par": "A",
+      "zona_parad": 7,
+      "nombre_par": "LICEO MAYOR ANDINO",
+      "via_parade": "KR 73B",
+      "direccion_": "KR 73B - CL 10 B",
+      "localidad_": 8,
+      "consola_pa": "KR 73B - CL 10 B (200A07)",
+      "panel_para": "KR 73B - CL 10 B",
+      "audio_para": "Carrera 73 Be Calle 10 Be",
+      "longitud_p": -74.1377039307,
+      "latitud_pa": 4.64279031831,
+      "coordenada": 993320.8506,
+      "coordena_1": 1005152.2642,
+      "globalid": "{F95E21A9-48D6-48B2-B0AB-5CA23330F773}"
+    },
+    "geometry": {
+      "x": -74.13770393064524,
+      "y": 4.6427903183140575
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4583,
+      "objectid": 11384,
+      "cenefa_par": "338A07",
+      "mdoulo_par": "A",
+      "zona_parad": 7,
+      "nombre_par": "La Magdalena Ciudad Tintal",
+      "via_parade": "Cl 7",
+      "direccion_": "CL 7 - KR 94 Bis",
+      "localidad_": 8,
+      "consola_pa": "CL 7 - KR 94 Bis (338A07)",
+      "panel_para": "CL 7 - KR 94 Bis",
+      "audio_para": "Calle Séptima Carrera 94 Bis",
+      "longitud_p": -74.1597136618,
+      "latitud_pa": 4.65576631665,
+      "coordenada": 990878.8895,
+      "coordena_1": 1006587.4176,
+      "globalid": "{BAFA7B1F-AD23-4920-BBB8-C7869379745A}"
+    },
+    "geometry": {
+      "x": -74.15971366183742,
+      "y": 4.655766316652931
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3975,
+      "objectid": 10776,
+      "cenefa_par": "168A07",
+      "mdoulo_par": "A",
+      "zona_parad": 7,
+      "nombre_par": "Br. Castilla",
+      "via_parade": "Cl 8",
+      "direccion_": "AC 8 - KR 78C",
+      "localidad_": 8,
+      "consola_pa": "AC 8 - KR 78C (168A07)",
+      "panel_para": "AC 8 - KR 78C",
+      "audio_para": "Avenida Calle Octava Carrera 78 C",
+      "longitud_p": -74.1430800002,
+      "latitud_pa": 4.63874099975,
+      "coordenada": 992724.2981,
+      "coordena_1": 1004704.537,
+      "globalid": "{221D68E9-0EF1-49A5-BC40-FDD7B236A7F1}"
+    },
+    "geometry": {
+      "x": -74.14308000021273,
+      "y": 4.638740999749962
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3839,
+      "objectid": 10640,
+      "cenefa_par": "029A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Estación Patio Bonito",
+      "via_parade": "AV. C. de Cali",
+      "direccion_": "AV. C. de Cali - CL 37A Sur",
+      "localidad_": 8,
+      "consola_pa": "AV. C. de Cali - CL 37A Sur (029A08)",
+      "panel_para": "AV. C. de Cali - CL 37A Sur",
+      "audio_para": "Avenida Ciudad de Cali Calle 37 A Sur",
+      "longitud_p": -74.1625627466,
+      "latitud_pa": 4.63513883618,
+      "coordenada": 990562.4958,
+      "coordena_1": 1004306.4336,
+      "globalid": "{587CD7DA-6225-434F-9A66-6EA51935E730}"
+    },
+    "geometry": {
+      "x": -74.16256274659312,
+      "y": 4.635138836176211
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3064,
+      "objectid": 9865,
+      "cenefa_par": "171A08",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. Ciudad Kennedy Oriental",
+      "via_parade": "CL 40 S",
+      "direccion_": "CL 40 Sur - KR 77A",
+      "localidad_": 8,
+      "consola_pa": "CL 40 Sur - KR 77A (171A08)",
+      "panel_para": "CL 40 Sur - KR 77A",
+      "audio_para": "Calle 40 Sur Carrera 77 A",
+      "longitud_p": -74.1529774721,
+      "latitud_pa": 4.61839278471,
+      "coordenada": 991625.8615,
+      "coordena_1": 1002454.5081,
+      "globalid": "{EA3460C9-C34C-4A1A-A479-FCD65432F619}"
+    },
+    "geometry": {
+      "x": -74.15297747207646,
+      "y": 4.618392784708832
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3109,
+      "objectid": 9910,
+      "cenefa_par": "035A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Av. Villavicencio",
+      "via_parade": "Av. V/cio",
+      "direccion_": "AV. V/cio - KR 79C",
+      "localidad_": 8,
+      "consola_pa": "AV. V/cio - KR 79C (035A08)",
+      "panel_para": "AV. V/cio - KR 79C",
+      "audio_para": "Avenida Villavicencio Carrera 79 C",
+      "longitud_p": -74.1648776624,
+      "latitud_pa": 4.61930128675,
+      "coordenada": 990305.422,
+      "coordena_1": 1002555.1228,
+      "globalid": "{5F96A6E7-2651-4E48-A5A5-C11A6572C65B}"
+    },
+    "geometry": {
+      "x": -74.16487766234745,
+      "y": 4.619301286749576
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2721,
+      "objectid": 9522,
+      "cenefa_par": "098D09",
+      "mdoulo_par": "D",
+      "zona_parad": 9,
+      "nombre_par": "Floralia",
+      "via_parade": "AV. 1 de Mayo",
+      "direccion_": "AV. 1 de Mayo - KR 68GBis",
+      "localidad_": 8,
+      "consola_pa": "AV. 1 de Mayo - KR 68GBis (098D09)",
+      "panel_para": "AV. 1 de Mayo - KR 68GBis",
+      "audio_para": "Avenida Primero de Mayo Carrera 68 G Bis",
+      "longitud_p": -74.1328180003,
+      "latitud_pa": 4.61145500003,
+      "coordenada": 993862.7075,
+      "coordena_1": 1001687.1118,
+      "globalid": "{03349CFC-4B38-45B8-96ED-2B42792FF070}"
+    },
+    "geometry": {
+      "x": -74.13281800031702,
+      "y": 4.611455000029101
+    }
+  },
+  {
+    "attributes": {
+      "FID": 3623,
+      "objectid": 10424,
+      "cenefa_par": "094A08",
+      "mdoulo_par": "A",
+      "zona_parad": 8,
+      "nombre_par": "Estación Mundo Aventura",
+      "via_parade": "AV. Américas",
+      "direccion_": "AV. Américas - KR 71B",
+      "localidad_": 8,
+      "consola_pa": "AV. Américas - KR 71B (094A08)",
+      "panel_para": "AV. Américas - KR 71B",
+      "audio_para": "Avenida Américas Carrera 71 Be",
+      "longitud_p": -74.1344705994,
+      "latitud_pa": 4.62977124546,
+      "coordenada": 993679.4947,
+      "coordena_1": 1003712.5648,
+      "globalid": "{6E7EE2F2-B447-49AA-8FFE-54FEB09662EB}"
+    },
+    "geometry": {
+      "x": -74.13447059943799,
+      "y": 4.629771245461957
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2443,
+      "objectid": 9244,
+      "cenefa_par": "313A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Urb. Nueva Roma",
+      "via_parade": "KR 77K",
+      "direccion_": "KR 77K - CL 56A Sur",
+      "localidad_": 8,
+      "consola_pa": "KR 77K - CL 56A Sur (313A09)",
+      "panel_para": "KR 77K - CL 56A Sur",
+      "audio_para": "Carrera 77 K Calle 56 A Sur",
+      "longitud_p": -74.1713294781,
+      "latitud_pa": 4.60613556114,
+      "coordenada": 989589.3339,
+      "coordena_1": 1001099.3269,
+      "globalid": "{82C429D2-F183-451D-8427-96B8AB2D5545}"
+    },
+    "geometry": {
+      "x": -74.17132947807279,
+      "y": 4.606135561140434
+    }
+  },
+  {
+    "attributes": {
+      "FID": 2853,
+      "objectid": 9654,
+      "cenefa_par": "396A09",
+      "mdoulo_par": "A",
+      "zona_parad": 9,
+      "nombre_par": "Br. Timiza B",
+      "via_parade": "TV 78",
+      "direccion_": "TV 78 - CL 41B Sur",
+      "localidad_": 8,
+      "consola_pa": "TV 78 - CL 41B Sur (396A09)",
+      "panel_para": "TV 78 - CL 41B Sur",
+      "audio_para": "Transversal 78 Calle 41 Be Sur",
+      "longitud_p": -74.1565645341,
+      "latitud_pa": 4.61424664259,
+      "coordenada": 991227.7882,
+      "coordena_1": 1001996.0644,
+      "globalid": "{5586080F-96D9-4E04-8E0B-4EF6E3A09796}"
+    },
+    "geometry": {
+      "x": -74.15656453406775,
+      "y": 4.614246642593804
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4292,
+      "objectid": 11093,
+      "cenefa_par": "129C06",
+      "mdoulo_par": "C",
+      "zona_parad": 6,
+      "nombre_par": "Zona Ind. Sredni",
+      "via_parade": "AK 68",
+      "direccion_": "AK 68 - CL 22",
+      "localidad_": 9,
+      "consola_pa": "AK 68 - CL 22 (129C06)",
+      "panel_para": "AK 68 - CL 22",
+      "audio_para": "Avenida Carrera 68 Calle 22",
+      "longitud_p": -74.1092091571,
+      "latitud_pa": 4.64656068729,
+      "coordenada": 996482.555,
+      "coordena_1": 1005568.9923,
+      "globalid": "{812799CD-C2E6-4C79-825A-66167AB17B54}"
+    },
+    "geometry": {
+      "x": -74.10920915707,
+      "y": 4.646560687285647
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4796,
+      "objectid": 11597,
+      "cenefa_par": "145A06",
+      "mdoulo_par": "A",
+      "zona_parad": 6,
+      "nombre_par": "Br. Capellanía",
+      "via_parade": "Av. Esperanza",
+      "direccion_": "AV. Esperanza - KR 74A Bis",
+      "localidad_": 9,
+      "consola_pa": "AV. Esperanza - KR 74A Bis (145A06)",
+      "panel_para": "AV. Esperanza - KR 74A Bis",
+      "audio_para": "Avenida Esperanza Carrera 74 A Bis",
+      "longitud_p": -74.1195258563,
+      "latitud_pa": 4.66554394423,
+      "coordenada": 995337.9794,
+      "coordena_1": 1007668.2513,
+      "globalid": "{A4A765A7-FE76-43E0-A957-685D3F1732C2}"
+    },
+    "geometry": {
+      "x": -74.11952585628829,
+      "y": 4.665543944226033
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5085,
+      "objectid": 11886,
+      "cenefa_par": "029A06",
+      "mdoulo_par": "A",
+      "zona_parad": 6,
+      "nombre_par": "Centro Empresarial Dorado Plaza",
+      "via_parade": "AV. C. de Cali",
+      "direccion_": "AV. C. de Cali - CL 25B",
+      "localidad_": 9,
+      "consola_pa": "AV. C. de Cali - CL 25B (029A06)",
+      "panel_para": "AV. C. de Cali - CL 25B",
+      "audio_para": "Avenida Ciudad de Cali Calle 25 Be",
+      "longitud_p": -74.122492039,
+      "latitud_pa": 4.67542098677,
+      "coordenada": 995008.942,
+      "coordena_1": 1008760.4915,
+      "globalid": "{37B46663-83D0-4A82-9461-746D9346BB16}"
+    },
+    "geometry": {
+      "x": -74.12249203896414,
+      "y": 4.67542098677018
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5686,
+      "objectid": 12487,
+      "cenefa_par": "253A06",
+      "mdoulo_par": "A",
+      "zona_parad": 6,
+      "nombre_par": "Br. El Refugio - La Zelfita",
+      "via_parade": "CL 23B",
+      "direccion_": "CL 23B - KR 119",
+      "localidad_": 9,
+      "consola_pa": "CL 23B - KR 119 (253A06)",
+      "panel_para": "CL 23B - KR 119",
+      "audio_para": "Calle 23 Be Carrera 119",
+      "longitud_p": -74.1489881166,
+      "latitud_pa": 4.69189378735,
+      "coordenada": 992069.3455,
+      "coordena_1": 1010582.3264,
+      "globalid": "{86C16936-D395-4645-8644-EA4DA6F8296C}"
+    },
+    "geometry": {
+      "x": -74.1489881166213,
+      "y": 4.6918937873481195
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5031,
+      "objectid": 11832,
+      "cenefa_par": "132A07",
+      "mdoulo_par": "A",
+      "zona_parad": 6,
+      "nombre_par": "Zona Franca",
+      "via_parade": "KR 106",
+      "direccion_": "KR 106 - AV. Centenario",
+      "localidad_": 9,
+      "consola_pa": "KR 106 - AV. Centenario (132A07)",
+      "panel_para": "KR 106 - AV. Centenario",
+      "audio_para": "Carrera 106 Avenida Centenario",
+      "longitud_p": -74.1535472866,
+      "latitud_pa": 4.67351424243,
+      "coordenada": 991563.2898,
+      "coordena_1": 1008549.937,
+      "globalid": "{2D05DE99-A38A-4F08-BBC3-336A53AF59AF}"
+    },
+    "geometry": {
+      "x": -74.153547286606,
+      "y": 4.673514242425196
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4975,
+      "objectid": 11776,
+      "cenefa_par": "405A06",
+      "mdoulo_par": "A",
+      "zona_parad": 6,
+      "nombre_par": "Hospital Fontibón",
+      "via_parade": "KR 99",
+      "direccion_": "KR 99 - CL 16 I",
+      "localidad_": 9,
+      "consola_pa": "KR 99 - CL 16 I (405A06)",
+      "panel_para": "KR 99 - CL 16 I",
+      "audio_para": "Carrera 99 Calle 16 I",
+      "longitud_p": -74.1460290988,
+      "latitud_pa": 4.67153666282,
+      "coordenada": 992397.4259,
+      "coordena_1": 1008331.1671,
+      "globalid": "{FFCA71C8-742B-4E6A-88E1-CC5C3A99C8F7}"
+    },
+    "geometry": {
+      "x": -74.14602909879785,
+      "y": 4.671536662819578
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4504,
+      "objectid": 11305,
+      "cenefa_par": "187A06",
+      "mdoulo_par": "A",
+      "zona_parad": 6,
+      "nombre_par": "C.C. Salitre Plaza",
+      "via_parade": "AV. Esperanza",
+      "direccion_": "AV. Esperanza - KR 68B",
+      "localidad_": 9,
+      "consola_pa": "AV. Esperanza - KR 68B (187A06)",
+      "panel_para": "AV. Esperanza - KR 68B",
+      "audio_para": "Avenida Esperanza Carrera 68 Be",
+      "longitud_p": -74.1102905395,
+      "latitud_pa": 4.65271348476,
+      "coordenada": 996362.6006,
+      "coordena_1": 1006249.3839,
+      "globalid": "{C9C1E157-E6FD-47E2-8C34-2355420712F9}"
+    },
+    "geometry": {
+      "x": -74.11029053951191,
+      "y": 4.652713484763224
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6319,
+      "objectid": 13120,
+      "cenefa_par": "293A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Br. Bachué I y II",
+      "via_parade": "CL 87",
+      "direccion_": "CL 86 - KR 95F",
+      "localidad_": 10,
+      "consola_pa": "CL 86 - KR 95F (293A04)",
+      "panel_para": "CL 86 - KR 95F",
+      "audio_para": "Calle 86 Carrera 95 F",
+      "longitud_p": -74.10578616,
+      "latitud_pa": 4.71461142038,
+      "coordenada": 996862.6604,
+      "coordena_1": 1013094.1408,
+      "globalid": "{39236315-B518-43E7-A271-DEC526B729CA}"
+    },
+    "geometry": {
+      "x": -74.1057861599802,
+      "y": 4.7146114203752125
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6483,
+      "objectid": 13284,
+      "cenefa_par": "100A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Br. Villas de Granada",
+      "via_parade": "Cl 79",
+      "direccion_": "CL 79 - KR 112F",
+      "localidad_": 10,
+      "consola_pa": "CL 79 - KR 112F (100A04)",
+      "panel_para": "CL 79 - KR 112F",
+      "audio_para": "Calle 79 Carrera 112 F",
+      "longitud_p": -74.1212601156,
+      "latitud_pa": 4.71980908592,
+      "coordenada": 995145.9328,
+      "coordena_1": 1013668.9968,
+      "globalid": "{4FF5EBF3-C42A-42EE-B239-2C6836B3AA14}"
+    },
+    "geometry": {
+      "x": -74.1212601156053,
+      "y": 4.719809085923169
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5573,
+      "objectid": 12374,
+      "cenefa_par": "011A05",
+      "mdoulo_par": "A",
+      "zona_parad": 5,
+      "nombre_par": "Br. Pinar de Los Álamos",
+      "via_parade": "AV. C. de Cali",
+      "direccion_": "AV. C. de Cali - CL 65C",
+      "localidad_": 10,
+      "consola_pa": "AV. C. de Cali - CL 65C (011A05)",
+      "panel_para": "AV. C. de Cali - CL 65C",
+      "audio_para": "Avenida Ciudad de Cali Calle 65 C",
+      "longitud_p": -74.1098477599,
+      "latitud_pa": 4.68892244378,
+      "coordenada": 996411.9133,
+      "coordena_1": 1010253.4283,
+      "globalid": "{6983A2C4-C66F-404F-A370-815E2B682C75}"
+    },
+    "geometry": {
+      "x": -74.109847759904,
+      "y": 4.688922443778095
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6055,
+      "objectid": 12856,
+      "cenefa_par": "203A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Br. Álamos norte",
+      "via_parade": "KR 101",
+      "direccion_": "KR 101 - CL 72A",
+      "localidad_": 10,
+      "consola_pa": "KR 101 - CL 72A (203A04)",
+      "panel_para": "KR 101 - CL 72A",
+      "audio_para": "Carrera 101 Calle 72 A",
+      "longitud_p": -74.1167522429,
+      "latitud_pa": 4.70494332,
+      "coordenada": 995645.9642,
+      "coordena_1": 1012025.0839,
+      "globalid": "{649BA0AF-AF87-4D89-AE8F-30D1DB948E60}"
+    },
+    "geometry": {
+      "x": -74.11675224293374,
+      "y": 4.704943319995966
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6076,
+      "objectid": 12877,
+      "cenefa_par": "125B04",
+      "mdoulo_par": "B",
+      "zona_parad": 4,
+      "nombre_par": "Br. Álamos Norte",
+      "via_parade": "AC 72",
+      "direccion_": "AC 72 - KR 103",
+      "localidad_": 10,
+      "consola_pa": "AC 72 - KR 103 (125B04)",
+      "panel_para": "AC 72 - KR 103",
+      "audio_para": "Avenida Calle 72 Carrera 103",
+      "longitud_p": -74.118462401,
+      "latitud_pa": 4.70559865861,
+      "coordenada": 995456.2317,
+      "coordena_1": 1012097.5633,
+      "globalid": "{8220FBFC-ACA7-4A3B-AAD6-118BAC1BAAB4}"
+    },
+    "geometry": {
+      "x": -74.11846240104849,
+      "y": 4.705598658612646
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6774,
+      "objectid": 13575,
+      "cenefa_par": "452A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "C.R. Los Eucaliptos",
+      "via_parade": "DG 89B",
+      "direccion_": "DG 89B - KR 118",
+      "localidad_": 10,
+      "consola_pa": "DG 89B - KR 118 (452A04)",
+      "panel_para": "DG 89B - KR 118",
+      "audio_para": "Diagonal 98 Be Carrera 118",
+      "longitud_p": -74.1175339999,
+      "latitud_pa": 4.73243599971,
+      "coordenada": 995559.4054,
+      "coordena_1": 1015065.2793,
+      "globalid": "{787D2D42-8C2F-4764-A282-7E23425FBDD0}"
+    },
+    "geometry": {
+      "x": -74.11753399989551,
+      "y": 4.7324359997092715
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4670,
+      "objectid": 11471,
+      "cenefa_par": "117D05",
+      "mdoulo_par": "D",
+      "zona_parad": 5,
+      "nombre_par": "Compensar",
+      "via_parade": "AK 68",
+      "direccion_": "AK 68 - CL 49",
+      "localidad_": 10,
+      "consola_pa": "AK 68 - CL 49 (117D05)",
+      "panel_para": "AK 68 - CL 49",
+      "audio_para": "Avenida Carrera 68 Calle 49",
+      "longitud_p": -74.0987464457,
+      "latitud_pa": 4.65988775584,
+      "coordenada": 997643.5007,
+      "coordena_1": 1007042.6773,
+      "globalid": "{0A9F1C16-5BA5-4B69-B9A2-4073EC2FE09C}"
+    },
+    "geometry": {
+      "x": -74.09874644571816,
+      "y": 4.659887755842331
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6269,
+      "objectid": 13070,
+      "cenefa_par": "407A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Br. Garcés Navas",
+      "via_parade": "Tv 106",
+      "direccion_": "TV 106 - CL 77D",
+      "localidad_": 10,
+      "consola_pa": "TV 106 - CL 77D (407A04)",
+      "panel_para": "TV 106 - CL 77D",
+      "audio_para": "Transversal 106 Calle 77 D",
+      "longitud_p": -74.1176685814,
+      "latitud_pa": 4.71264587079,
+      "coordenada": 995544.3483,
+      "coordena_1": 1012876.8515,
+      "globalid": "{D9F923D1-C1BA-452E-931F-1E01AF50C883}"
+    },
+    "geometry": {
+      "x": -74.11766858135714,
+      "y": 4.712645870785124
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5749,
+      "objectid": 12550,
+      "cenefa_par": "178A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Humedal Santamaría del Lago",
+      "via_parade": "KR 76",
+      "direccion_": "KR 76 - CL 75A-21",
+      "localidad_": 10,
+      "consola_pa": "KR 76 - CL 75A-21 (178A04)",
+      "panel_para": "KR 76 - CL 75A-21",
+      "audio_para": "Carrera 76 Calle 75 A",
+      "longitud_p": -74.0961154676,
+      "latitud_pa": 4.69403641674,
+      "coordenada": 997935.5182,
+      "coordena_1": 1010818.8848,
+      "globalid": "{7DF7B849-923F-4707-9741-3BB8B56263B2}"
+    },
+    "geometry": {
+      "x": -74.09611546757208,
+      "y": 4.694036416736156
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5731,
+      "objectid": 12532,
+      "cenefa_par": "107A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Br. Santa María",
+      "via_parade": "AV. Boyacá",
+      "direccion_": "AV. Boyacá - CL 77A",
+      "localidad_": 10,
+      "consola_pa": "AV. Boyacá - CL 77A (107A04)",
+      "panel_para": "AV. Boyacá - CL 77A",
+      "audio_para": "Avenida Boyacá Calle 77 A",
+      "longitud_p": -74.0913696961,
+      "latitud_pa": 4.69347238415,
+      "coordenada": 998462.0537,
+      "coordena_1": 1010756.5009,
+      "globalid": "{0D30619C-6286-4A16-8AC1-3DDB5352894C}"
+    },
+    "geometry": {
+      "x": -74.09136969607923,
+      "y": 4.693472384146108
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5569,
+      "objectid": 12370,
+      "cenefa_par": "179B05",
+      "mdoulo_par": "B",
+      "zona_parad": 5,
+      "nombre_par": "Br. Boyacá",
+      "via_parade": "AC 72",
+      "direccion_": "AC 72 – KR 73A",
+      "localidad_": 10,
+      "consola_pa": "AC 72 – KR 73A (179B05)",
+      "panel_para": "AC 72 – KR 73A",
+      "audio_para": "Avenida Calle 72 Carrera 73 A",
+      "longitud_p": -74.0972414046,
+      "latitud_pa": 4.68885024428,
+      "coordenada": 997810.5809,
+      "coordena_1": 1010245.3924,
+      "globalid": "{94CAD5C5-BE13-44F5-9897-1BE91BCCADE8}"
+    },
+    "geometry": {
+      "x": -74.09724140458638,
+      "y": 4.688850244282376
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4943,
+      "objectid": 11744,
+      "cenefa_par": "130A05",
+      "mdoulo_par": "A",
+      "zona_parad": 5,
+      "nombre_par": "CAI Normandía",
+      "via_parade": "AV. Boyacá",
+      "direccion_": "AV. Boyacá - CL 52",
+      "localidad_": 10,
+      "consola_pa": "AV. Boyacá - CL 52 (130A05)",
+      "panel_para": "AV. Boyacá - CL 52",
+      "audio_para": "Avenida Boyacá Calle 52",
+      "longitud_p": -74.1072951923,
+      "latitud_pa": 4.6705852453,
+      "coordenada": 996695.0332,
+      "coordena_1": 1008225.6575,
+      "globalid": "{F9B28FC8-D117-49A5-B559-28ED9DE61DE2}"
+    },
+    "geometry": {
+      "x": -74.10729519231066,
+      "y": 4.670585245299756
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5321,
+      "objectid": 12122,
+      "cenefa_par": "117A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "CAI Las Ferias",
+      "via_parade": "AC 72",
+      "direccion_": "AC 72 - KR 69B Bis",
+      "localidad_": 10,
+      "consola_pa": "AC 72 - KR 69B Bis (117A04)",
+      "panel_para": "AC 72 - KR 69B Bis",
+      "audio_para": "Avenida Calle 72 Carrera 68 H",
+      "longitud_p": -74.0896951275,
+      "latitud_pa": 4.68208032015,
+      "coordenada": 998647.823,
+      "coordena_1": 1009496.7437,
+      "globalid": "{F566A479-6FE4-4924-A897-F9280C4A50BA}"
+    },
+    "geometry": {
+      "x": -74.08969512748214,
+      "y": 4.682080320148911
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6397,
+      "objectid": 13198,
+      "cenefa_par": "155A04",
+      "mdoulo_par": "A",
+      "zona_parad": 4,
+      "nombre_par": "Br. Bochica II",
+      "via_parade": "CL 83",
+      "direccion_": "CL 83 - KR 103B",
+      "localidad_": 10,
+      "consola_pa": "CL 83 - KR 103B (155A04)",
+      "panel_para": "CL 83 - KR 103B",
+      "audio_para": "Calle 83 Carrera 103 Be",
+      "longitud_p": -74.1107420545,
+      "latitud_pa": 4.71673690072,
+      "coordenada": 996312.8381,
+      "coordena_1": 1013329.2045,
+      "globalid": "{94973650-A729-46B3-8DF0-1E997089BE62}"
+    },
+    "geometry": {
+      "x": -74.11074205449742,
+      "y": 4.716736900723307
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6858,
+      "objectid": 13659,
+      "cenefa_par": "449A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "Urb. Portal de Suba",
+      "via_parade": "Cl 137",
+      "direccion_": "CL 137 - KR 90A",
+      "localidad_": 11,
+      "consola_pa": "CL 137 - KR 90A (449A03)",
+      "panel_para": "CL 137 - KR 90A",
+      "audio_para": "Calle 137 Carrera 90 A",
+      "longitud_p": -74.0849582887,
+      "latitud_pa": 4.73529855865,
+      "coordenada": 999173.4404,
+      "coordena_1": 1015381.7028,
+      "globalid": "{99594897-5659-4927-A304-C256D32B2E42}"
+    },
+    "geometry": {
+      "x": -74.08495828871607,
+      "y": 4.735298558654695
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7246,
+      "objectid": 14047,
+      "cenefa_par": "247A02",
+      "mdoulo_par": "A",
+      "zona_parad": 2,
+      "nombre_par": "Br. Caminos de Veracruz",
+      "via_parade": "KR 55A",
+      "direccion_": "KR 55A - CL 166",
+      "localidad_": 11,
+      "consola_pa": "KR 55A - CL 166 (247A02)",
+      "panel_para": "KR 55A - CL 166",
+      "audio_para": "Carrera 55 A Calle 166",
+      "longitud_p": -74.0565506556,
+      "latitud_pa": 4.74911279239,
+      "coordenada": 1002324.9955,
+      "coordena_1": 1016909.3373,
+      "globalid": "{38764209-B895-493C-A4F8-BAF259864DB4}"
+    },
+    "geometry": {
+      "x": -74.05655065561166,
+      "y": 4.749112792387688
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6074,
+      "objectid": 12875,
+      "cenefa_par": "014B03",
+      "mdoulo_par": "B",
+      "zona_parad": 3,
+      "nombre_par": "Br. Niza (Humedal Córdoba)",
+      "via_parade": "AV. Boyacá",
+      "direccion_": "AV. Boyacá - CL 119",
+      "localidad_": 11,
+      "consola_pa": "AV. Boyacá - CL 119 (014B03)",
+      "panel_para": "AV. Boyacá - CL 119",
+      "audio_para": "Avenida Boyacá Calle 119",
+      "longitud_p": -74.0816638052,
+      "latitud_pa": 4.70548184592,
+      "coordenada": 999538.9175,
+      "coordena_1": 1012084.5141,
+      "globalid": "{5B8F3781-A89E-4C12-9566-02F380075ECE}"
+    },
+    "geometry": {
+      "x": -74.08166380517832,
+      "y": 4.705481845918986
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7501,
+      "objectid": 14302,
+      "cenefa_par": "089A02",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "C. C. Santafé",
+      "via_parade": "Auto Norte",
+      "direccion_": "Auto Norte - CL 187",
+      "localidad_": 11,
+      "consola_pa": "Auto Norte - CL 187 (089A02)",
+      "panel_para": "Auto Norte - CL 187",
+      "audio_para": "Autopista Norte Calle 187",
+      "longitud_p": -74.0447016758,
+      "latitud_pa": 4.76441043769,
+      "coordenada": 1003639.4394,
+      "coordena_1": 1018601.0315,
+      "globalid": "{23E7B042-DC90-4A4A-B6C9-2244B4A68A24}"
+    },
+    "geometry": {
+      "x": -74.04470167576382,
+      "y": 4.764410437694331
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7288,
+      "objectid": 14089,
+      "cenefa_par": "414A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "Parques del Campo",
+      "via_parade": "CL 144",
+      "direccion_": "CL 144 - KR 127D",
+      "localidad_": 11,
+      "consola_pa": "CL 144 - KR 127D (414A03)",
+      "panel_para": "CL 144 - KR 127D",
+      "audio_para": "Calle 144 Carrera 127 D",
+      "longitud_p": -74.1083679996,
+      "latitud_pa": 4.75093899956,
+      "coordenada": 996576.3958,
+      "coordena_1": 1017111.3239,
+      "globalid": "{F5C43FA8-D5C2-47CB-A722-3FA5172A3E48}"
+    },
+    "geometry": {
+      "x": -74.10836799956842,
+      "y": 4.750938999557396
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6928,
+      "objectid": 13729,
+      "cenefa_par": "476A03",
+      "mdoulo_par": "A",
+      "zona_parad": 2,
+      "nombre_par": "Br. Casa Blanca I",
+      "via_parade": "KR 76",
+      "direccion_": "KR 76 - CL 146C",
+      "localidad_": 11,
+      "consola_pa": "KR 76 - CL 146C (476A03)",
+      "panel_para": "KR 76 - CL 146C",
+      "audio_para": "Carrera 76 Calle 146 C",
+      "longitud_p": -74.0741117606,
+      "latitud_pa": 4.73813844441,
+      "coordenada": 1000376.775,
+      "coordena_1": 1015695.7391,
+      "globalid": "{42512C16-EBCD-4211-8D67-F153D8F677BA}"
+    },
+    "geometry": {
+      "x": -74.07411176061534,
+      "y": 4.7381384444108035
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7592,
+      "objectid": 14393,
+      "cenefa_par": "099A02",
+      "mdoulo_par": "A",
+      "zona_parad": 1,
+      "nombre_par": "Club Campestre Cafam",
+      "via_parade": "Auto Norte",
+      "direccion_": "Auto Norte - CL 215",
+      "localidad_": 11,
+      "consola_pa": "Auto Norte - CL 215 (099A02)",
+      "panel_para": "Auto Norte - CL 215",
+      "audio_para": "Autopista Norte Calle 215",
+      "longitud_p": -74.040197393,
+      "latitud_pa": 4.79115921812,
+      "coordenada": 1004138.9725,
+      "coordena_1": 1021558.9906,
+      "globalid": "{41EE7487-1208-4624-BFEC-9AD754132F7B}"
+    },
+    "geometry": {
+      "x": -74.04019739295912,
+      "y": 4.791159218122764
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6727,
+      "objectid": 13528,
+      "cenefa_par": "134A02",
+      "mdoulo_par": "A",
+      "zona_parad": 2,
+      "nombre_par": "Br. Bosque de Los Urapanes",
+      "via_parade": "AV. Villas",
+      "direccion_": "AV. Villas - CL 138",
+      "localidad_": 11,
+      "consola_pa": "AV. Villas - CL 138 (134A02)",
+      "panel_para": "AV. Villas - CL 138",
+      "audio_para": "Avenida Villas Calle 138",
+      "longitud_p": -74.0638336837,
+      "latitud_pa": 4.73017519647,
+      "coordenada": 1001517.0587,
+      "coordena_1": 1014815.1625,
+      "globalid": "{0E123D75-FFF2-4BFF-8E8A-13C3E2BEFE75}"
+    },
+    "geometry": {
+      "x": -74.06383368368539,
+      "y": 4.730175196465201
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7353,
+      "objectid": 14154,
+      "cenefa_par": "417A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "Conjunto Residencial Catigua",
+      "via_parade": "Dg 146",
+      "direccion_": "DG 146 - KR 128",
+      "localidad_": 11,
+      "consola_pa": "DG 146 - KR 128 (417A03)",
+      "panel_para": "DG 146 - KR 128",
+      "audio_para": "Diagonal 146 Carrera 128",
+      "longitud_p": -74.1061397378,
+      "latitud_pa": 4.75375311107,
+      "coordenada": 996823.6111,
+      "coordena_1": 1017422.5031,
+      "globalid": "{62EBF547-CA3A-47A3-85B8-3A0436F96859}"
+    },
+    "geometry": {
+      "x": -74.1061397377831,
+      "y": 4.753753111069613
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7383,
+      "objectid": 14184,
+      "cenefa_par": "622A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "Br. Rincón de Santa Inés",
+      "via_parade": "CL 151 B",
+      "direccion_": "CL 151B - KR 115",
+      "localidad_": 11,
+      "consola_pa": "CL 151B - KR 115 (622A03)",
+      "panel_para": "CL 151B - KR 115",
+      "audio_para": "Calle 151 Be Carrera 115",
+      "longitud_p": -74.1019990002,
+      "latitud_pa": 4.75531100007,
+      "coordenada": 997282.987,
+      "coordena_1": 1017594.7598,
+      "globalid": "{7F6052D7-0276-4333-A052-C7FD8DDA505C}"
+    },
+    "geometry": {
+      "x": -74.10199900017646,
+      "y": 4.7553110000706225
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7392,
+      "objectid": 14193,
+      "cenefa_par": "117A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "Br. Compartir Suba",
+      "via_parade": "Cl 151 B",
+      "direccion_": "CL 151 B - KR 117",
+      "localidad_": 11,
+      "consola_pa": "CL 151 B - KR 117 (117A03)",
+      "panel_para": "CL 151 B - KR 117",
+      "audio_para": "Calle 151 Be 117",
+      "longitud_p": -74.1039081394,
+      "latitud_pa": 4.75577272657,
+      "coordenada": 997071.1912,
+      "coordena_1": 1017645.8262,
+      "globalid": "{9380F405-D2B4-4585-9B49-9A30A1CB8447}"
+    },
+    "geometry": {
+      "x": -74.1039081393826,
+      "y": 4.755772726566999
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7186,
+      "objectid": 13987,
+      "cenefa_par": "152A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "Berlín",
+      "via_parade": "CL 139",
+      "direccion_": "CL 139 - KR 140A",
+      "localidad_": 11,
+      "consola_pa": "CL 139 - KR 140A (152A03)",
+      "panel_para": "CL 139 - KR 140A",
+      "audio_para": "Calle 139 Carrera 140 A",
+      "longitud_p": -74.1155168227,
+      "latitud_pa": 4.74699417283,
+      "coordenada": 995783.2844,
+      "coordena_1": 1016675.1369,
+      "globalid": "{85AD6AE6-6EF9-40F8-BBB8-849CF7D332BC}"
+    },
+    "geometry": {
+      "x": -74.11551682272186,
+      "y": 4.746994172831358
+    }
+  },
+  {
+    "attributes": {
+      "FID": 7290,
+      "objectid": 14091,
+      "cenefa_par": "250A02",
+      "mdoulo_par": "A",
+      "zona_parad": 2,
+      "nombre_par": "Br. Britalia",
+      "via_parade": "KR 55A",
+      "direccion_": "KR 55A - CL 167C",
+      "localidad_": 11,
+      "consola_pa": "KR 55A - CL 167C (250A02)",
+      "panel_para": "KR 55A - CL 167C",
+      "audio_para": "Carrera 55 A Calle 167 C",
+      "longitud_p": -74.0561357321,
+      "latitud_pa": 4.75097276763,
+      "coordenada": 1002371.0207,
+      "coordena_1": 1017115.0183,
+      "globalid": "{5E3C2C39-736B-4FCF-AD65-86CB372121B5}"
+    },
+    "geometry": {
+      "x": -74.05613573212734,
+      "y": 4.7509727676296825
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6775,
+      "objectid": 13576,
+      "cenefa_par": "361A02",
+      "mdoulo_par": "A",
+      "zona_parad": 2,
+      "nombre_par": "Br. Santa Helena",
+      "via_parade": "AV. Villas",
+      "direccion_": "AV. Villas - CL 146A",
+      "localidad_": 11,
+      "consola_pa": "AV. Villas - CL 146A (361A02)",
+      "panel_para": "AV. Villas - CL 146A",
+      "audio_para": "Avenida Villas Calle 146 A",
+      "longitud_p": -74.0630981973,
+      "latitud_pa": 4.73247282567,
+      "coordenada": 1001598.6504,
+      "coordena_1": 1015069.2402,
+      "globalid": "{0DFB35D0-5BBD-4C92-9DBA-F2A7DCAD9A9F}"
+    },
+    "geometry": {
+      "x": -74.06309819733654,
+      "y": 4.732472825668091
+    }
+  },
+  {
+    "attributes": {
+      "FID": 6701,
+      "objectid": 13502,
+      "cenefa_par": "373A03",
+      "mdoulo_par": "A",
+      "zona_parad": 3,
+      "nombre_par": "COSTA RICA",
+      "via_parade": "Cl 130C",
+      "direccion_": "CL 130C - KR 94D",
+      "localidad_": 11,
+      "consola_pa": "CL 130C - KR 94D (373A03)",
+      "panel_para": "CL 130C - KR 94D",
+      "audio_para": "Calle 130 C Carrera 94 D",
+      "longitud_p": -74.092173028,
+      "latitud_pa": 4.72909901023,
+      "coordenada": 998373.0079,
+      "coordena_1": 1014696.1581,
+      "globalid": "{CA3887E3-8CEC-42A3-9D92-210937F661B1}"
+    },
+    "geometry": {
+      "x": -74.09217302794991,
+      "y": 4.729099010229741
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4849,
+      "objectid": 11650,
+      "cenefa_par": "079A04",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Br. 12 de Octubre",
+      "via_parade": "AV. NQS",
+      "direccion_": "AV. NQS - CL 71",
+      "localidad_": 12,
+      "consola_pa": "AV. NQS - CL 71 (079A04)",
+      "panel_para": "AV. NQS - CL 71",
+      "audio_para": "Avenida N Q S Calle 71",
+      "longitud_p": -74.073782439,
+      "latitud_pa": 4.66769570633,
+      "coordenada": 1000413.352,
+      "coordena_1": 1007906.0587,
+      "globalid": "{DF97E9EB-96E6-4CCD-B4CA-76CFE43B076D}"
+    },
+    "geometry": {
+      "x": -74.07378243896231,
+      "y": 4.667695706330873
+    }
+  },
+  {
+    "attributes": {
+      "FID": 5437,
+      "objectid": 12238,
+      "cenefa_par": "209C03",
+      "mdoulo_par": "C",
+      "zona_parad": 3,
+      "nombre_par": "Entreríos",
+      "via_parade": "AK 68",
+      "direccion_": "AK 68 - CL 90",
+      "localidad_": 12,
+      "consola_pa": "AK 68 - CL 90 (209C03)",
+      "panel_para": "AK 68 - CL 90",
+      "audio_para": "Avenida Carrera 68 Calle 90",
+      "longitud_p": -74.0767617108,
+      "latitud_pa": 4.68553527304,
+      "coordenada": 1000082.7915,
+      "coordena_1": 1009878.7865,
+      "globalid": "{AC7CDD71-5272-47FF-A89E-29B5FCE7AB44}"
+    },
+    "geometry": {
+      "x": -74.07676171079014,
+      "y": 4.685535273042611
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4506,
+      "objectid": 11307,
+      "cenefa_par": "156A05",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "Pq. de los Novios",
+      "via_parade": "AC 63",
+      "direccion_": "AC 63 - KR 45",
+      "localidad_": 12,
+      "consola_pa": "AC 63 - KR 45 (156A05)",
+      "panel_para": "AC 63 - KR 45",
+      "audio_para": "Avenida Calle 63 Carrera 45",
+      "longitud_p": -74.0814409439,
+      "latitud_pa": 4.65275886478,
+      "coordenada": 999563.6106,
+      "coordena_1": 1006254.3189,
+      "globalid": "{C3B148AB-D535-4BC0-A3E9-807D5657E898}"
+    },
+    "geometry": {
+      "x": -74.08144094387126,
+      "y": 4.652758864779284
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4658,
+      "objectid": 11459,
+      "cenefa_par": "328B00",
+      "mdoulo_par": "B",
+      "zona_parad": 0,
+      "nombre_par": "Br. Alcázares",
+      "via_parade": "AC 68",
+      "direccion_": "AC 68 - KR 24",
+      "localidad_": 12,
+      "consola_pa": "AC 68 - KR 24 (328B00)",
+      "panel_para": "AC 68 - KR 24",
+      "audio_para": "Avenida Calle 68 Carrera 24",
+      "longitud_p": -74.069985224,
+      "latitud_pa": 4.6593532495,
+      "coordenada": 1000834.6733,
+      "coordena_1": 1006983.5397,
+      "globalid": "{15639232-DAEE-4DDD-81EF-E73E39E69352}"
+    },
+    "geometry": {
+      "x": -74.06998522396145,
+      "y": 4.659353249498952
+    }
+  },
+  {
+    "attributes": {
+      "FID": 4112,
+      "objectid": 10913,
+      "cenefa_par": "391A00",
+      "mdoulo_par": "A",
+      "zona_parad": 0,
+      "nombre_par": "C.C. Galerías",
+      "via_parade": "AK 24",
+      "direccion_": "AK 24 - AC 53",
+      "localidad_": 13,
+      "consola_pa": "AK 24 - AC 53 (391A00)",
+      "panel_para": "AK 24 - AC 53",
+      "audio_para": "Avenida Carrera 24 Avenida Calle 53",
+      "longitud_p": -74.073974097,
+      "latitud_pa": 4.64225053858,
+      "coordenada": 1000392.1011,
+      "coordena_1": 1005092.2915,
+      "globalid": "{85319ED8-AC6F-4C15-A19B-DD96B98FCE52}"
+    },
+    "geometry": {
+      "x": -74.07397409697712,
+      "y": 4.6422505385844675
+    }
+  }
+]

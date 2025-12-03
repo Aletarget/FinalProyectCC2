@@ -26,7 +26,7 @@ export class BuildTMStructures {
         lonMax = Math.max(lonMax, lon);
         latMin = Math.min(latMin, lat);
         latMax = Math.max(latMax, lat);
-        });
+        }); 
 
         const lonRange = lonMax - lonMin;
         const latRange = latMax - latMin;
@@ -69,6 +69,7 @@ export class BuildTMStructures {
         });
 
         graph.autoConnect();
+        graph.autoConnectSITP(10000);
         this.connectManually(graph); // Llamada al método estático
 
         return { tree, graph };
@@ -95,7 +96,7 @@ export class BuildTMStructures {
         graph.connectByName("Avenida Jiménez", "Av Jiménez");
         graph.connectByName("San Victorino", "Las Nieves");
         graph.connectByName("Aguas", "Museo del Oro");     // Aguas <-> Museo del Oro
-        
+
         // Basta con una: Av Jiménez (general) se conecta a Calle 19.
         graph.connectByName("Avenida Jiménez", "Calle 19");
 
