@@ -153,8 +153,8 @@ export class Graph {
     }
 
     // 2. Heurística para conexión de paraderos SITP
-    autoConnectSITP(maxDistanceMeters: number = 7000) {
-        const maxConetionsSitp = 2;
+    autoConnectSITP(maxDistanceMeters: number = 7500) {
+        const maxConetionsSitp = 3;
         // Convertir la distancia máxima de metros a unidades de coordenadas (grados decimales)
         // Aproximadamente 1 grado de latitud/longitud es 111,320 metros.
         // Usaremos una aproximación simple para Bogotá (ignora la diferencia entre lat/lon a esta escala).

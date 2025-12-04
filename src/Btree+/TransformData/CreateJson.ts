@@ -1,17 +1,20 @@
 import dataTM  from "../../data/TM/dataTm.json";
 import dataSitp from "../../data/SITP/dataSitp.json";
 import dataMetro from "../../data/METRO/dataMetro.json";
+import dataRutas from "../../data/RUTAS/dataRutas.json";
 import { SITPInterface } from "../../data/SITP/SITP.interface";
 import { StationInterface } from "../../interfaces/Stations.interface";
 import { TmInterface } from "../../data/TM/TM.interface";
 import { TransportTypes } from "../../interfaces/types.enum";
 import { METROInterface } from "../../data/METRO/METRO.interface";
+import { RouteInterface } from "../../interfaces/Routes.interface";
 
 export class flattenData{
 
     private static rawDataTM = dataTM as TmInterface[];
     private static rawDataSitp = dataSitp as SITPInterface[];
     private static rawDataMetro = dataMetro as METROInterface[];
+    private static DataRutas = dataRutas as RouteInterface[];
 
     private static rawToJsonTM(): StationInterface[]{
         const dataToFix = this.rawDataTM;
@@ -48,9 +51,10 @@ export class flattenData{
 
     }
 
-    public static rawToJsonAll(): StationInterface[] {
+    public static rawToJsonAllStations(): StationInterface[] {
         const tmStations: StationInterface[] = this.rawToJsonTM();
         const metroStations: StationInterface[] = this.rawToJsonMetro();
+        
         let currentId = 5000; // ID inicial para el SITP (asegura que no choquen con las de TM)
 
         const sitpStations: StationInterface[] = this.rawDataSitp.map(data => {
@@ -68,4 +72,11 @@ export class flattenData{
         
         return [...tmStations, ...sitpStations  ,...metroStations];
     }
+    //La informacion de las rutas en el json esta completamente organizada por lo que solo se debe de devolver
+    public static getRoutes(): RouteInterface[]{
+        return [...this.DataRutas];
+    }
+
+
+
 }

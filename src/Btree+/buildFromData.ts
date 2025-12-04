@@ -1,5 +1,6 @@
 // structures/Btree+/buildFromData.ts
 
+import { RouteInterface } from "../interfaces/Routes.interface";
 import { StationInterface } from "../interfaces/Stations.interface";
 import { BPlusTree } from "./Bplustree";
 import { Graph } from "./Graph";
@@ -9,13 +10,13 @@ const CANVAS_WIDTH = 1250;
 const CANVAS_HEIGHT = 900;
 const PADDING_RATIO = 0.04;
 
-export class BuildTMStructures {
+export class BuildStructures {
   
     // El método ahora recibe el 'order' directamente
-    public static buildTMStructures(order = 4) {
+    public static buildStructures(order = 4) {
         //CAMBIO CRÍTICO: Usar rawToJsonAll() para incluir estaciones TM y SITP
-        const rawData: StationInterface[] = flattenData.rawToJsonAll();
-        
+        const rawData: StationInterface[] = flattenData.rawToJsonAllStations();
+        const routes: RouteInterface[] = flattenData.getRoutes();
         // 1. CALCULAR LOS LÍMITES GEOGRÁFICOS REALES
         let lonMin = Infinity, lonMax = -Infinity;
         let latMin = Infinity, latMax = -Infinity;
@@ -49,8 +50,10 @@ export class BuildTMStructures {
         const offsetY = (CANVAS_HEIGHT - scaledHeight) / 2;
         
         // Inicializar estructuras
-        const tree = new BPlusTree<StationInterface>(order);
+        const tree = new BPlusTree<number ,StationInterface>(order);
+        const routesTree = new BPlusTree<string, RouteInterface>(order);
         const graph = new Graph();
+        
 
         rawData.forEach(st => {
         const [rawLon, rawLat] = st.coords;
@@ -68,11 +71,19 @@ export class BuildTMStructures {
         graph.addStation(mappedStation);
         });
 
+        //Llenar arbol de rutas
+        routes.forEach((route)=>{
+            const routeKey = route.routeId;
+            routesTree.insert(routeKey, route)
+        })
+
+
+
         graph.autoConnect();
-        graph.autoConnectSITP(10000);
+        graph.autoConnectSITP();
         this.connectManually(graph); // Llamada al método estático
 
-        return { tree, graph };
+        return { tree, graph, routesTree };
     }
 
     private static connectManually(graph: Graph){
@@ -115,6 +126,24 @@ export class BuildTMStructures {
         // G. Calle 13 con caracas (Conexiones de la Estación Sabana)
         graph.connectByName('De la sabana', 'Calle 19');
         graph.connectByName('De la sabana', 'Avenida Jiménez'); 
+
+
+
+        // Transbordos de Metro con transmilenio
+        graph.connect(62,20012);
+        graph.connect(149,20011);
+
+
+        // Transbordos de Sitp con transmilenio
+        graph.connect(102, 5019);
+        graph.connect(104, 5019);
+
+        graph.connect(123, 5024);
+        graph.connect(125, 5024);
+
+        graph.connect(138, 20009);
+
+
 
     }
 }

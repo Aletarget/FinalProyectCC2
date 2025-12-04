@@ -1,9 +1,14 @@
-export class BPlusNode<T> {
+// 1. Definimos un tipo para la función de comparación
+// Retorna: -1 si a < b, 0 si a == b, 1 si a > b
+export type Comparator<K> = (a: K, b: K) => number;
+
+// 2. Nodo Genérico (K = Clave, V = Valor)
+export class BPlusNode<K, V> {
   isLeaf: boolean;
-  keys: number[];
-  values: T[];
-  children: BPlusNode<T>[];
-  next: BPlusNode<T> | null;
+  keys: K[];          // Antes number[], ahora K[]
+  values: V[];        // Antes T[], ahora V[]
+  children: BPlusNode<K, V>[];
+  next: BPlusNode<K, V> | null;
 
   constructor(isLeaf = false) {
     this.isLeaf = isLeaf;
@@ -14,24 +19,30 @@ export class BPlusNode<T> {
   }
 }
 
-export class BPlusTree<T> {
+// 3. Árbol Genérico
+export class BPlusTree<K, V> {
   order: number;
-  root: BPlusNode<T>;
+  root: BPlusNode<K, V>;
+  compare: Comparator<K>; // Función para comparar claves
 
-  constructor(order = 5) {
+  // Constructor: Recibe el orden y opcionalmente un comparador personalizado
+  constructor(order = 5, compare?: Comparator<K>) {
     this.order = order;
-    this.root = new BPlusNode<T>(true);
+    this.root = new BPlusNode<K, V>(true);
+    
+    // Si no pasan comparador, usamos uno por defecto (sirve para number y string estándar)
+    this.compare = compare || ((a: any, b: any) => {
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0;
+    });
   }
 
-  // -----------------------------------------
-  // INSERTAR VALOR
-  // -----------------------------------------
-  insert(key: number, value: T) {
+  insert(key: K, value: V) {
     const root = this.root;
 
-    // Si la raíz está llena, el árbol crece en altura
     if (root.keys.length === this.order - 1) {
-      const newRoot = new BPlusNode<T>(false);
+      const newRoot = new BPlusNode<K, V>(false);
       newRoot.children.push(root);
       this.splitChild(newRoot, 0);
       this.root = newRoot;
@@ -41,16 +52,17 @@ export class BPlusTree<T> {
     }
   }
 
-  private insertNonFull(node: BPlusNode<T>, key: number, value: T) {
+  private insertNonFull(node: BPlusNode<K, V>, key: K, value: V) {
     if (node.isLeaf) {
-      // MEJORA: Verificar si la clave ya existe para actualizarla en vez de duplicarla
-      const existingIndex = node.keys.findIndex(k => k === key);
+      const existingIndex = node.keys.findIndex(k => this.compare(k, key) === 0);
+      
       if (existingIndex !== -1) {
-        node.values[existingIndex] = value; // Actualizar valor de estación existente
+        node.values[existingIndex] = value; 
         return;
       }
 
-      const pos = node.keys.findIndex(k => k > key);
+      const pos = node.keys.findIndex(k => this.compare(k, key) > 0);
+      
       if (pos === -1) {
         node.keys.push(key);
         node.values.push(value);
@@ -59,22 +71,19 @@ export class BPlusTree<T> {
         node.values.splice(pos, 0, value);
       }
     } else {
-      // Nodo Interno
       let i = node.keys.length - 1;
       
-      // Buscamos el hijo correcto. 
-      // Nota: Aquí usamos < porque vamos de derecha a izquierda
-      while (i >= 0 && key < node.keys[i]) i--;
+      while (i >= 0 && this.compare(key, node.keys[i]) < 0) {
+        i--;
+      }
 
       const childIndex = i + 1;
       const child = node.children[childIndex];
 
       if (child.keys.length === this.order - 1) {
         this.splitChild(node, childIndex);
-        // Al dividir, una clave sube al nodo actual.
-        // Verificamos si nuestra clave es mayor que la nueva clave promovida
-        if (key > node.keys[childIndex]) { 
-           // IMPORTANTE: Si es igual, insertNonFull en el hijo derecho manejará la lógica
+        
+        if (this.compare(key, node.keys[childIndex]) > 0) { 
            i++; 
         }
       }
@@ -82,15 +91,14 @@ export class BPlusTree<T> {
     }
   }
 
-  private splitChild(parent: BPlusNode<T>, index: number) {
+  private splitChild(parent: BPlusNode<K, V>, index: number) {
     const node = parent.children[index];
     const mid = Math.floor(node.keys.length / 2);
 
-    const newNode = new BPlusNode<T>(node.isLeaf);
+    const newNode = new BPlusNode<K, V>(node.isLeaf);
 
-    // Copiar claves y valores (temporalmente todo para luego cortar)
     newNode.keys = node.keys.slice(mid);
-    newNode.values = node.values.slice(mid); // Solo relevante si es hoja, pero no daña
+    newNode.values = node.values.slice(mid); 
 
     if (node.isLeaf) {
       newNode.next = node.next;
@@ -99,63 +107,48 @@ export class BPlusTree<T> {
       node.keys = node.keys.slice(0, mid);
       node.values = node.values.slice(0, mid);
 
-      // En hojas, la clave se COPIA arriba (promotedKey es la primera del derecho)
       const promotedKey = newNode.keys[0];
 
       parent.keys.splice(index, 0, promotedKey);
       parent.children.splice(index + 1, 0, newNode);
 
     } else {
-      // Nodo interno
       newNode.children = node.children.slice(mid + 1);
       node.children = node.children.slice(0, mid + 1);
 
-      // En nodos internos, la clave SUBE (se quita del hijo)
       const promotedKey = node.keys[mid];
-      
       parent.keys.splice(index, 0, promotedKey);
 
       node.keys = node.keys.slice(0, mid);
-      // Removemos la clave que subió del nuevo nodo derecho
       newNode.keys = newNode.keys.slice(1); 
 
       parent.children.splice(index + 1, 0, newNode);
     }
   }
 
-  // -----------------------------------------
-  // BUSCAR (CORREGIDO)
-  // -----------------------------------------
-  search(key: number): T | null {
+
+  // buscar
+
+  search(key: K): V | null {
     return this.searchNode(this.root, key);
   }
 
-  private searchNode(node: BPlusNode<T>, key: number): T | null {
+  private searchNode(node: BPlusNode<K, V>, key: K): V | null {
     let i = 0;
 
-    // CORRECCIÓN CRÍTICA:
-    // Debemos avanzar mientras la clave buscada sea MAYOR O IGUAL a la clave del nodo.
-    // Si key == node.keys[i], debemos ir al hijo derecho (i+1), por eso seguimos incrementando i.
-    while (i < node.keys.length && key >= node.keys[i]) {
+    while (i < node.keys.length && this.compare(key, node.keys[i]) >= 0) {
         i++;
     }
 
     if (node.isLeaf) {
-      // En la hoja, 'i' habrá avanzado hasta pasar nuestra clave.
-      // Debemos mirar una posición atrás (i-1) porque el bucle avanza uno extra cuando encuentra >=
-      // O más simple: buscar linealmente o usar binary search en la hoja.
-      // Dado el bucle de arriba, si key existe, 'i' se detuvo justo después de él (si key == keys[i-1])
-      // O si es mayor que todos, i = length.
-      
-      // Ajuste para búsqueda exacta en hoja dado el bucle while modificado:
       const index = i - 1;
-      if (index >= 0 && node.keys[index] === key) {
+      if (index >= 0 && this.compare(node.keys[index], key) === 0) {
           return node.values[index];
       }
       return null;
     } else {
-      // Nodo interno: descendemos por el hijo en la posición 'i'
       return this.searchNode(node.children[i], key);
     }
   }
+  
 }
