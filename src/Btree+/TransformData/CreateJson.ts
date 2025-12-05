@@ -20,6 +20,7 @@ export class flattenData{
         const dataToFix = this.rawDataTM;
         let dataFixed: StationInterface[] = [] 
         dataToFix!.forEach(data => {
+            
             const dataToPush: StationInterface = {
                 coords: [data.coord_x, data.coord_y],
                 id: data.fid,
@@ -78,5 +79,24 @@ export class flattenData{
     }
 
 
+
+
+    private static getRandomInt(min: number, max: number): number {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; 
+    }
+    public static generateEdgeCapacity(type: TransportTypes): number {
+        switch (type) {
+            case TransportTypes.metro:
+                return this.getRandomInt(15000, 35000); 
+            case TransportTypes.transM:
+                return this.getRandomInt(8000, 20000); 
+            case TransportTypes.sitp:
+                return this.getRandomInt(2000, 8000); 
+            default:
+                return 1000; 
+        }
+    }
 
 }

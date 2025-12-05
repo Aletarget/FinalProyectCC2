@@ -1,4 +1,5 @@
 // structures/Btree+/CalculateAdjListWithWeights.ts
+import { EdgeDataInterface } from "../../interfaces/links.interfaces";
 import { StationInterface } from "../../interfaces/Stations.interface";
 import { TransportTypes } from "../../interfaces/types.enum";
 import { constsWeights } from "../../interfaces/weights.enum";
@@ -101,5 +102,43 @@ export class CalculateAdjListWithWeights {
         
         graph.adjList = tempAdjList;
         console.log("Pesos (tiempo en minutos) aplicados a todas las aristas del grafo.");
+    }
+
+    public reAsignWeights(
+        adjList: Map<number, Map<number, number>>, 
+        adjListComplete: Map<number, Map<number, EdgeDataInterface>>
+    ) {
+        // Iterar sobre la lista de adyacencia simple (origen -> destinos con nuevo peso)
+        for (const [idA, neighbors] of adjList.entries()) {
+            
+            // neighbors es un Map<idB, nuevoWeight>
+            neighbors.forEach((newWeight, idB) => {
+                
+                // 1. Intentar encontrar y actualizar la arista A -> B en adjListComplete
+                const edgeAB = adjListComplete.get(idA)?.get(idB);
+
+                if (edgeAB) {
+                    // Si la arista existe, actualiza su peso
+                    edgeAB.weight = newWeight;
+                    // console.log(`Peso actualizado A->B: ${idA} -> ${idB} = ${newWeight}`);
+                } else {
+                    // Esto podría indicar una inconsistencia si adjList tiene una conexión que adjListComplete no
+                    console.warn(`Advertencia: Arista A->B (${idA} -> ${idB}) no existe en adjListComplete.`);
+                }
+
+                // 2. Intentar encontrar y actualizar la arista B -> A en adjListComplete (asumiendo grafo no dirigido para pesos)
+                const edgeBA = adjListComplete.get(idB)?.get(idA);
+
+                if (edgeBA) {
+                    // El peso (tiempo/costo) generalmente es simétrico
+                    edgeBA.weight = newWeight;
+                    // console.log(`Peso actualizado B->A: ${idB} -> ${idA} = ${newWeight}`);
+                } else {
+                    console.warn(`Advertencia: Arista B->A (${idB} -> ${idA}) no existe en adjListComplete.`);
+                }
+            });
+        }
+
+        console.log("Sincronización de pesos (weight) completada entre adjList y adjListComplete.");
     }
 }

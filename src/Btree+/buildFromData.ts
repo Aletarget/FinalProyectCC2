@@ -94,8 +94,10 @@ export class BuildStructures {
         const weightCalculator = new CalculateAdjListWithWeights();
         // Pasamos el factor de escala para que la clase de pesos pueda calcular distancias reales.
         weightCalculator.applyWeightsToGraph(graph, PIXEL_TO_METER_RATIO); 
+        weightCalculator.reAsignWeights(graph.adjList, graph.adjListComplete);
             return { tree, graph, routesTree };
         }
+        
 
     private static connectManually(graph: Graph){
         //Conexiones entre distintas troncales
@@ -116,6 +118,7 @@ export class BuildStructures {
         graph.connectByName("Av Jiménez", "Las Nieves");
         graph.connectByName("Av Jiménez", "Museo del Oro");
         graph.connectByName("Avenida Jiménez", "Av Jiménez");
+        graph.connectByName("Av Jiménez", "De la Sabana");
         graph.connectByName("San Victorino", "Las Nieves");
         graph.connectByName("Aguas", "Museo del Oro");         // Aguas <-> Museo del Oro
 

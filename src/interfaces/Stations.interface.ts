@@ -10,3 +10,4 @@ export interface StationInterface {
     troncal?: string; // Solo para TransM
     lineName?: string; // Solo para Metro/SITP (ej: "Línea 1 Metro", "Ruta C11")
 }
+

@@ -1,5 +1,6 @@
 // /src/main.ts
 import { Dijkstra } from "./algorithms/dijkstra";
+import { GraphColoring } from "./algorithms/GraphColoring";
 import { BuildStructures } from "./Btree+/buildFromData";
 import { RouteInterface } from "./interfaces/Routes.interface";
 import { StationInterface } from "./interfaces/Stations.interface";
@@ -23,19 +24,48 @@ const endStationInput = document.getElementById("end-station-input") as HTMLInpu
 const findRouteBtn = document.getElementById("find-route-btn") as HTMLButtonElement;
 const dijkstraStatus = document.getElementById("dijkstra-status") as HTMLSpanElement;
 
+//Referencias para flujos maximos
+const flowStartInput = document.getElementById("flow-start-input") as HTMLInputElement;
+const flowEndInput = document.getElementById("flow-end-input") as HTMLInputElement;
+const findMaxFlowBtn = document.getElementById("find-max-flow-btn") as HTMLButtonElement;
+const maxFlowStatus = document.getElementById("max-flow-status") as HTMLSpanElement;
+
+//Arbol de recubrimiento minimo
+const toggleMstBtn = document.getElementById("toggle-mst-btn") as HTMLButtonElement;
+const mstStatus = document.getElementById("mst-status") as HTMLSpanElement;
+
+//Dibujar coloreado de grafos
+const colorGraphBtn = document.getElementById("color-graph-btn") as HTMLButtonElement;
+const coloringStatus = document.getElementById("coloring-status") as HTMLSpanElement;
+
 // Construir estructuras
 const { graph, tree, routesTree } = BuildStructures.buildStructures(4);
 const dijkstraSolver = new Dijkstra(graph); // <--- 3. INICIALIZAR SOLVER
-
 let highlightedRoute: RouteInterface | null = null;
-console.log(graph)
 
+
+graph.generateMinimumSpanningTree();
+
+const graphColoring = new GraphColoring(graph);
+console.log(graphColoring.greedyColoring())
+
+
+console.log(graph)
 // Estado: Estación actualmente seleccionada (para resaltar)
 let highlightedStation: StationInterface | null = null;
 
 // Estado de la ruta de Dijkstra (4. NUEVO ESTADO)
 let dijkstraPath: StationInterface[] | null = null;
 
+// Estado para mostrar o no el arbol de recubrimiento minimo
+let showMST = false;
+
+// Estado para mostrar el coloreado del grafo
+let coloringResult: Map<number, number> | null = null;
+let showColoring = false;
+
+// Nuevo estado para cuellos de botella
+let bottleneckEdges: [number, number][] | null = null;
 
 // estado de búsqueda por similitud y paginación
 
@@ -84,56 +114,100 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // -------------------------------------------------
-    // 0. PREPARACIÓN: Crear un Set de IDs de la ruta actual para búsqueda rápida
+    // 0. PREPARACIÓN: Crear Sets de IDs de la ruta/camino para búsqueda rápida
     // -------------------------------------------------
     const routeStopsSet = new Set<number>();
     if (highlightedRoute) {
         highlightedRoute.stops.forEach(stopId => routeStopsSet.add(stopId.stationId));
     }
-    // Agregar el camino de Dijkstra al set para resaltado (NUEVO)
     if (dijkstraPath) {
         dijkstraPath.forEach(st => routeStopsSet.add(st.id));
     }
 
     // -------------------------------------------------
-    // 1. DIBUJAR CONEXIONES (ARISTAS) <--- LÓGICA CORREGIDA Y VISIBLE
+    // 1. DIBUJAR CONEXIONES (ARISTAS)
     // -------------------------------------------------
-    ctx.strokeStyle = "#eee"; // Un gris más claro para que resalte la ruta
+    ctx.strokeStyle = "#eee"; 
     ctx.lineWidth = 1;
 
-    for (const [idA, neighbors] of graph.adjList.entries()) { // idA es el ID de la estación de origen
+    for (const [idA, neighbors] of graph.adjList.entries()) { 
         const stA = graph.stations.get(idA)!;
         if (!stA) continue;
         const [x1, y1] = toScreenCoords(stA.coords);
         
-        // CORRECCIÓN: Usar el key (idB) para buscar la estación vecina (Map.forEach(value, key))
         neighbors.forEach((_weight, idB) => { 
-            const stB = graph.stations.get(idB)!; // ✅ CORRECTO: Usamos idB (la clave)
+            const stB = graph.stations.get(idB)!;
             if (stB) {
                 const [x2, y2] = toScreenCoords(stB.coords);
+                
+                // 1b. DIBUJAR CUELLO DE BOTELLA (Aristas saturadas)
+                const isBottleneck = bottleneckEdges?.some(([u, v]) => 
+                    (u === idA && v === idB) || (u === idB && v === idA)
+                );
+
+                if (isBottleneck) {
+                    // Si es cuello de botella, dibujamos primero con un color llamativo
+                    ctx.strokeStyle = "darkred";
+                    ctx.lineWidth = 4;
+                } else {
+                    // Si no, dibujamos normal
+                    ctx.strokeStyle = "#eee"; 
+                    ctx.lineWidth = 1;
+                }
+
                 ctx.beginPath();
                 ctx.moveTo(x1, y1);
                 ctx.lineTo(x2, y2);
                 ctx.stroke();
+
+                // Asegurar que las aristas de cuello de botella se dibujen encima si es necesario
+                if (isBottleneck) {
+                    ctx.strokeStyle = "red";
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.stroke();
+                }
             }
         });
     }
+    //Dibujar MST solo si esta activo
+        if (showMST && graph.mstEdges.length > 0) {
+        ctx.strokeStyle = "#00ccff";  // azul brillante
+        ctx.lineWidth = 6;
+        ctx.lineCap = "round";
+
+        graph.mstEdges.forEach(([u, v]) => {
+            const stA = graph.stations.get(u);
+            const stB = graph.stations.get(v);
+            if (!stA || !stB) return;
+
+            const [x1, y1] = toScreenCoords(stA.coords);
+            const [x2, y2] = toScreenCoords(stB.coords);
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+        });
+    }
+
 
     // -------------------------------------------------
-    // 2. DIBUJAR TRAZADO DE LA RUTA SELECCIONADA (LÍNEA NARANJA)
+    // 2. DIBUJAR TRAZADO DE RUTA/DIJKSTRA (LÍNEA NARANJA/PÚRPURA)
     // -------------------------------------------------
+    // ... (Mantener la lógica de dibujado de highlightedRoute y dijkstraPath tal cual) ...
+    
+    // 2. DIBUJAR TRAZADO DE LA RUTA SELECCIONADA (LÍNEA NARANJA)
     if (highlightedRoute) {
+        // ... Lógica de dibujado de highlightedRoute ...
+        // (Dejado fuera por brevedad, mantienes tu código original aquí)
         
         const stops = highlightedRoute.stops;
-        
-        // --- LÓGICA DE DERECHO A SALTO (TM o Metro) ---
         const firstStopId = stops[0]?.stationId;
         const firstStationType = graph.stations.get(firstStopId)?.type;
-        
-        const isSkipAllowedRoute = 
-            firstStationType === TransportTypes.transM || 
-            firstStationType === TransportTypes.metro;
-        // ---------------------------------------------------
+        const isSkipAllowedRoute = firstStationType === TransportTypes.transM || firstStationType === TransportTypes.metro;
 
         ctx.strokeStyle = "orange";
         ctx.lineWidth = 5; 
@@ -141,84 +215,64 @@ function draw() {
         ctx.lineJoin = "round";
         
         if (stops.length > 0) {
-            
             let previousStationId: number | null = null;
-
             for (let i = 0; i < stops.length; i++) {
                 const currentStationId = stops[i].stationId;
                 const currentStation = graph.stations.get(currentStationId);
-
                 if (!currentStation) {
-                    //console.warn(`Estación ID ${currentStationId} de la ruta no encontrada.`);
-                    previousStationId = null; // Reiniciar la conexión si una parada es inválida
+                    previousStationId = null; 
                     continue;
                 }
-
                 const [x, y] = toScreenCoords(currentStation.coords);
-                
-                // Si es la primera parada, solo movemos el cursor
                 if (previousStationId === null) {
                     ctx.beginPath();
                     ctx.moveTo(x, y);
                 } else {
                     const neighbors = graph.adjList.get(previousStationId);
                     const isDirectlyConnected = neighbors && neighbors.has(currentStationId);
-                    
-                    const isTMSkipOrMetroSkipAllowed = isSkipAllowedRoute; 
-                    
+                    const isTMSkipOrMetroSkipAllowed = isSkipAllowedRoute;
                     if (isDirectlyConnected || isTMSkipOrMetroSkipAllowed) { 
-                        // Dibujamos la línea
-                        //if (!isDirectlyConnected && isTMSkipOrMetroSkipAllowed) {
-                        //    console.log(`Dibujando salto (${firstStationType}) en ${highlightedRoute.routeId}: ${previousStationId} -> ${currentStationId}`);
-                        //}
-                        
                         ctx.lineTo(x, y);
-                        ctx.stroke(); // Dibuja el segmento actual
-                        
-                        // Movemos a la posición de inicio para el siguiente segmento
+                        ctx.stroke(); 
                         ctx.beginPath();
                         ctx.moveTo(x, y);
                     } else {
-                        // Si NO hay conexión y NO es TM/Metro, cortamos la línea
-                        //console.warn(`Ruta ${highlightedRoute.routeId} inválida (Fallo de dibujo): No hay conexión en el grafo entre ${previousStationId} y ${currentStationId}.`);
                         ctx.beginPath();
-                        ctx.moveTo(x, y); // El siguiente segmento comenzará desde aquí
+                        ctx.moveTo(x, y); 
                     }
                 }
-                
-                previousStationId = currentStationId; // Actualizar para el siguiente paso
+                previousStationId = currentStationId; 
             }
         }
     }
 
-    // 2b. DIBUJAR RUTA MÍNIMA DE DIJKSTRA (LÍNEA PÚRPURA) (NUEVO)
+
+    // 2b. DIBUJAR RUTA MÍNIMA DE DIJKSTRA (LÍNEA PÚRPURA) 
     if (dijkstraPath && dijkstraPath.length > 1) {
-    
-    for (let i = 0; i < dijkstraPath.length - 1; i++) {
-        const stA = dijkstraPath[i];
-        const stB = dijkstraPath[i + 1];
+        for (let i = 0; i < dijkstraPath.length - 1; i++) {
+            const stA = dijkstraPath[i];
+            const stB = dijkstraPath[i + 1];
 
-        const [x1, y1] = toScreenCoords(stA.coords);
-        const [x2, y2] = toScreenCoords(stB.coords);
+            const [x1, y1] = toScreenCoords(stA.coords);
+            const [x2, y2] = toScreenCoords(stB.coords);
 
-        // --- COLOR SEGÚN EL TIPO DE TRANSPORTE ---
-        let color = "black";
+            let color = "black";
+            if (stA.type === TransportTypes.transM) color = "red";
+            else if (stA.type === TransportTypes.sitp) color = "blue";
+            else if (stA.type === TransportTypes.metro) color = "#32ff32";
+            else color = "gray"; 
 
-        if (stA.type === TransportTypes.transM) color = "red";
-        else if (stA.type === TransportTypes.sitp) color = "blue";
-        else if (stA.type === TransportTypes.metro) color = "#32ff32";
-        else color = "gray"; // caminar o desconocido
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 6;
+            ctx.lineCap = "round";
 
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 6;
-        ctx.lineCap = "round";
-
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+        }
     }
-}
+
 
     // -------------------------------------------------
     // 3. DIBUJAR ESTACIONES (NODOS)
@@ -230,16 +284,18 @@ function draw() {
         const baseRadiusTM = 5;
         const baseRadiusSITP = 3;
         const baseRadiusMetro = 6;
-        const highlightRadius = 8; // Radio para estaciones de la ruta
-        const selectedRadius = 12; // Radio extra grande para estación única seleccionada
+        const highlightRadius = 8; 
+        const selectedRadius = 12; 
         
         const currentRadius = (st.type === TransportTypes.sitp) 
             ? baseRadiusSITP 
             : (st.type === TransportTypes.metro ? baseRadiusMetro : baseRadiusTM);
 
+        // ... (Lógica de resaltado de estaciones existente A, B, C) ...
+        
         // A. CASO: Estación única seleccionada (Búsqueda por nombre/ID)
         if (highlightedStation && st.id === highlightedStation.id) {
-            ctx.fillStyle = "red";       
+            ctx.fillStyle = "red";     
             ctx.strokeStyle = "black";
             ctx.lineWidth = 3;
             ctx.arc(x, y, selectedRadius, 0, Math.PI * 2);
@@ -250,13 +306,11 @@ function draw() {
         else if (routeStopsSet.has(st.id)) {
             
             if (dijkstraPath && dijkstraPath.includes(st)) {
-                // Nodo en la ruta mínima
                 ctx.fillStyle = "magenta"; 
                 ctx.strokeStyle = "purple";
                 ctx.lineWidth = 3;
                 ctx.arc(x, y, highlightRadius, 0, Math.PI * 2);
             } else {
-                 // Color de parada de ruta normal
                 ctx.fillStyle = "gold"; 
                 ctx.strokeStyle = "darkorange";
                 ctx.lineWidth = 2;
@@ -268,23 +322,75 @@ function draw() {
         } 
         // C. CASO: Estación normal
         else {
-            // Estilo normal (algo más transparente u opaco)
-            if (st.type === TransportTypes.sitp) {
-                ctx.fillStyle = "rgba(0, 0, 255, 0.5)"; // Azul con transparencia
-                ctx.arc(x, y, currentRadius, 0, Math.PI * 2); 
-            } 
-            else if (st.type === TransportTypes.metro) { 
-                ctx.fillStyle = "rgba(9, 224, 9, 0.8)"; 
-                ctx.arc(x, y, currentRadius, 0, Math.PI * 2); 
-            } 
-            else { // Transmilenio
-                ctx.fillStyle = "rgba(227, 24, 55, 0.6)"; 
-                ctx.arc(x, y, currentRadius, 0, Math.PI * 2); 
+
+                // 🔥 SI EL COLOREADO ESTÁ ACTIVADO → usar color asignado
+                if (showColoring && coloringResult && coloringResult.has(st.id)) {
+                    // Generar color único para cada frecuencia
+                    const bigColorPalette = [
+                        "#e6194B", "#3cb44b", "#ffe119", "#4363d8", "#f58231",
+                        "#911eb4", "#46f0f0", "#f032e6", "#bcf60c", "#fabebe",
+                        "#008080", "#e6beff", "#9A6324", "#fffac8", "#800000",
+                        "#aaffc3", "#808000", "#ffd8b1", "#000075", "#808080",
+                        "#ffffff", "#000000", "#ff7f00", "#1b9e77", "#d95f02",
+                        "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d",
+                        "#666666", "#1f77b4", "#ffbb78", "#2ca02c", "#98df8a",
+                        "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b",
+                        "#c49c94", "#e377c2", "#f7b6d2", "#7f7f7f", "#c7c7c7",
+                        "#bcbd22", "#dbdb8d", "#17becf", "#9edae5"
+                    ];
+
+                    const colorId = coloringResult.get(st.id)!;
+                    ctx.fillStyle = bigColorPalette[colorId % bigColorPalette.length];
+
+                    ctx.beginPath();
+                    ctx.arc(x, y, currentRadius + 3, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.strokeStyle = "black";
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+
+                // 🎨 Si NO hay coloreado, usar colores por tipo de transporte
+                else {
+                    if (st.type === TransportTypes.sitp) {
+                        ctx.fillStyle = "rgba(0, 0, 255, 0.5)"; 
+                    } 
+                    else if (st.type === TransportTypes.metro) { 
+                        ctx.fillStyle = "rgba(9, 224, 9, 0.8)"; 
+                    } 
+                    else { // Transmilenio
+                        ctx.fillStyle = "rgba(227, 24, 55, 0.6)"; 
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(x, y, currentRadius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
             }
-            ctx.fill();
         }
     }
-}
+
+
+toggleMstBtn.addEventListener("click", () => {
+    
+    // Si está apagado → calcular y mostrar
+    if (!showMST) {
+        const mst = graph.generateMinimumSpanningTree();
+        graph.mstEdges = mst;
+        showMST = true;
+        toggleMstBtn.textContent = "Ocultar MST";
+        mstStatus.textContent = ` (${mst.length} aristas)`;
+    } 
+    // Si está encendido → ocultar
+    else {
+        showMST = false;
+        toggleMstBtn.textContent = "Mostrar MST";
+        mstStatus.textContent = "";
+    }
+
+    draw();
+});
 
 // Dibujado inicial
 draw();
@@ -418,11 +524,6 @@ function levenshteinDistance(a: string, b: string): number {
 
 
 // lógica de búsqueda y paginación
-
-
-/**
- * Ejecuta la búsqueda por similitud o ID y gestiona los resultados.
- */
 function searchStations() {
     const query = searchInput.value.trim(); 
     if (!query) return;
@@ -583,7 +684,7 @@ function findShortestRoute() {
     // 4. Mostrar resultado
     if (result) {
         dijkstraPath = result.path;
-        dijkstraStatus.textContent = `✅ Ruta encontrada. Tiempo total: ${result.totalTime.toFixed(2)} minutos.`;
+        dijkstraStatus.textContent = ` Ruta encontrada. Tiempo total: ${result.totalTime.toFixed(2)} minutos.`;
         
         // Centrar en la estación de destino
         centerOnStation(result.path[result.path.length - 1]);
@@ -595,10 +696,54 @@ function findShortestRoute() {
     draw();
 }
 
+function findMaxFlow() {
+    // 1. Limpiar estados de otras visualizaciones
+    dijkstraPath = null;
+    highlightedRoute = null;
+    highlightedStation = null;
+    maxFlowStatus.textContent = "Analizando capacidad...";
+    
+    // 2. Obtener y validar IDs (usamos las mismas estaciones, pero los pesos son CAPACITY)
+    const startId = Number(flowStartInput.value.trim());
+    const endId = Number(flowEndInput.value.trim());
+
+    if (isNaN(startId) || isNaN(endId) || startId <= 0 || endId <= 0 || startId === endId) {
+        maxFlowStatus.textContent = "❌ Ingrese IDs válidos para Origen y Destino.";
+        bottleneckEdges = null;
+        draw();
+        return;
+    }
+    
+    // 3. Ejecutar el análisis de Flujo Máximo
+    const result = graph.findMaxFlowAnalysis(startId, endId);
+
+    // 4. Mostrar y almacenar el resultado
+    if (result.maxFlow > 0) {
+        bottleneckEdges = result.bottleneckEdges;
+        const sourceName = graph.stations.get(startId)?.name || 'Origen';
+        const sinkName = graph.stations.get(endId)?.name || 'Destino';
+        
+        maxFlowStatus.innerHTML = ` Flujo Máximo (${sourceName} → ${sinkName}): 
+            <span style="font-weight: bold;">${result.maxFlow.toFixed(0)}</span> unidades/hora. 
+            Cuellos de Botella: ${bottleneckEdges.length}.`;
+            
+        // Centrar la vista para un mejor análisis
+        const sinkStation = graph.stations.get(endId);
+        if (sinkStation) centerOnStation(sinkStation);
+
+    } else {
+        bottleneckEdges = null;
+        maxFlowStatus.textContent = "❌ No hay camino de flujo entre las estaciones o capacidad es cero.";
+    }
+
+    draw();
+}
+
 
 // ------------------------------------------
 // MANEJADORES DE EVENTOS
 // ------------------------------------------
+findMaxFlowBtn.addEventListener('click', findMaxFlow);
 searchBtn.addEventListener('click', searchStations);
 
 nextBtn.addEventListener('click', () => {
@@ -617,7 +762,11 @@ clearBtn.addEventListener('click', () => {
     paginationStatus.textContent = "";
     dijkstraStatus.textContent = "";
     nextBtn.disabled = true;
-    
+    flowStartInput.value = ""; // Limpiar inputs de Flujo Máximo
+    flowEndInput.value = "";
+    bottleneckEdges = null; // Limpiar aristas de cuello de botella
+    maxFlowStatus.textContent = "";
+
     //Restablecer la vista a la configuración inicial
     viewTransform = { scale: 1, offsetX: 0, offsetY: 0 };
     draw();
@@ -625,11 +774,26 @@ clearBtn.addEventListener('click', () => {
 
 // NUEVO: Manejador para el botón de Dijkstra (6. EVENT LISTENER)
 findRouteBtn.addEventListener('click', findShortestRoute);
+colorGraphBtn.addEventListener("click", () => {
+
+    if (!showColoring) {
+        const gc = new GraphColoring(graph);
+        coloringResult = gc.greedyColoring();
+        showColoring = true;
+
+        coloringStatus.textContent = "✔ Coloreado aplicado.";
+        colorGraphBtn.textContent = "Ocultar Coloreado";
+    } else {
+        showColoring = false;
+        coloringStatus.textContent = "";
+        colorGraphBtn.textContent = "Aplicar Coloreado";
+    }
+
+    draw();
+});
 
 
 // interactividad (hover)
-
-
 function handleHover(e: MouseEvent) {
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;

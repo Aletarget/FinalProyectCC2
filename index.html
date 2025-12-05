@@ -17,16 +17,35 @@
       <span id="pagination-status"></span>
       <button id="clear-btn">Limpiar</button>
 
-      <hr style="margin: 10px 0;">
+      <hr>
 
-      <h3>Búsqueda de Ruta Mínima (Dijkstra)</h3>
+      <h3>Búsqueda de Ruta Mínima (Tiempo)</h3>
       <div class="dijkstra-controls">
-          <input type="text" id="start-station-input" placeholder="ID Origen" />
-          <input type="text" id="end-station-input" placeholder="ID Destino" />
-          <button id="find-route-btn">Calcular Ruta</button>
-          <span id="dijkstra-status"></span>
+        <input type="text" id="start-station-input" placeholder="ID Origen" />
+        <input type="text" id="end-station-input" placeholder="ID Destino" />
+        <button id="find-route-btn">Calcular Ruta</button>
+        <span id="dijkstra-status"></span>
       </div>
 
+      <hr>
+
+      <h3>Flujo Máximo (Capacidad / Congestión)</h3>
+      <div class="max-flow-controls">
+        <input type="text" id="flow-start-input" placeholder="ID Origen (Source)" />
+        <input type="text" id="flow-end-input" placeholder="ID Destino (Sink)" />
+        <button id="find-max-flow-btn">Analizar Congestión</button>
+        <span id="max-flow-status"></span>
+      </div>
+      <hr>
+
+      <h3>Árbol de Recubrimiento Mínimo (MST)</h3>
+      <button id="toggle-mst-btn">Mostrar MST</button>
+      <span id="mst-status"></span>
+      <hr>
+
+      <h3>Coloreado de Grafo (Frecuencias / Recursos)</h3>
+      <button id="color-graph-btn">Aplicar Coloreado</button>
+      <span id="coloring-status"></span>
     </div>
 
     <div class="map-container">

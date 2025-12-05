@@ -1,6 +1,9 @@
+import { EdmondsKarp } from "../algorithms/maxFlow";
+import { EdgeDataInterface } from "../interfaces/links.interfaces";
 import { RouteInterface } from "../interfaces/Routes.interface";
 import { StationInterface } from "../interfaces/Stations.interface";
 import { TransportTypes } from "../interfaces/types.enum";
+import { flattenData } from "./TransformData/CreateJson";
 
 // Función auxiliar de distancia (al cuadrado)
 function getSqDistance(st1: StationInterface, st2: StationInterface): number {
@@ -12,6 +15,9 @@ function getSqDistance(st1: StationInterface, st2: StationInterface): number {
 export class Graph {
     stations = new Map<number, StationInterface>();
     adjList = new Map<number, Map<number, number>>(); // ESTRUCTURA CON PESOS
+    adjListComplete = new Map<number, Map<number, EdgeDataInterface>> 
+
+    mstEdges: Array<[number, number, number]> = [];
     // --- MÉTODOS BASE ---
 
     addStation(st: StationInterface) {
@@ -21,14 +27,42 @@ export class Graph {
         }
     }
 
-    connect(a: number, b: number, weight: number = 1) {
-        if (a === b) return;
+    connect(a: number, b: number, weight: number = 1, transportType?: TransportTypes) {
+            if (a === b) return;
 
-        // normal adjacency list (NO CAMBIA)
-        if (!this.adjList.has(a)) this.adjList.set(a, new Map());
-        if (!this.adjList.has(b)) this.adjList.set(b, new Map());
-        this.adjList.get(a)!.set(b, weight);
-        this.adjList.get(b)!.set(a, weight);
+            // 1. Obtener el tipo de transporte para la capacidad
+            let type: TransportTypes;
+            if (transportType) {
+                type = transportType;
+            } else {
+                // Heurística: Si no se especifica, usa el tipo de la estación A.
+                const stA = this.stations.get(a);
+                type = stA ? stA.type : TransportTypes.sitp; // Default a SITP si no se encuentra
+            }
+    
+            const capacity = flattenData.generateEdgeCapacity(type);
+            const edgeData: EdgeDataInterface = { weight, flow: 0, capacity };
+
+            // 2. Poblar la lista de adyacencia completa (DIRECTO)
+            // Arista A -> B
+            if (!this.adjListComplete.has(a)) this.adjListComplete.set(a, new Map());
+            this.adjListComplete.get(a)!.set(b, {...edgeData}); // Usar copia
+            
+            // 3. Poblar la lista de adyacencia completa (INVERSO)
+            // Edmonds-Karp necesita el arco de retorno con capacidad 0 y flow 0.
+            // OJO: Si es una conexión SIMÉTRICA (dos vías), la capacidad es la misma.
+            const edgeDataReverse: EdgeDataInterface = { weight, flow: 0, capacity };
+            if (!this.adjListComplete.has(b)) this.adjListComplete.set(b, new Map());
+            this.adjListComplete.get(b)!.set(a, {...edgeDataReverse}); // Usar copia
+            
+            // OPCIONAL: Si aún usas la lista simple adjList, actualízala aquí:
+            if (!this.adjList.has(a)) this.adjList.set(a, new Map());
+            if (!this.adjList.has(b)) this.adjList.set(b, new Map());
+            this.adjList.get(a)!.set(b, weight);
+            this.adjList.get(b)!.set(a, weight); 
+
+            // Console.log para verificación:
+            // console.log(`Conexión ${a} -> ${b}. Tipo: ${type}. Capacidad: ${capacity}`);
     }
 
     // --- MÉTODOS DE CONEXIÓN MANUAL/HEURÍSTICA ---
@@ -72,7 +106,7 @@ export class Graph {
         if (bestPair) {
             // Conexiones manuales/de transbordo usan peso 1 (temporal). 
             // La clase de pesos aplicará el costo real (e.g., constsWeights.INTERNAL_TRANSFER_PENALTY)
-            this.connect(bestPair[0], bestPair[1], 1); 
+            this.connect(bestPair[0], bestPair[1], 1, this.stations.get(bestPair[0])?.type); 
         }
     }
 
@@ -144,11 +178,15 @@ export class Graph {
                 }
                 return comparison;
             });
-
             // Conectar la estación con su siguiente vecina en la lista ordenada
             for (let i = 0; i < group.length - 1; i++) {
+                const stA = group[i];
+                const stB = group[i + 1];
+                
+                // Determinamos el tipo de transporte de la ruta (Metro o TransMilenio)
+                const type = stA.type === TransportTypes.metro ? TransportTypes.metro : TransportTypes.transM;
                 // Las conexiones de ruta usan peso 1 (temporal)
-                this.connect(group[i].id, group[i + 1].id, 1); 
+                this.connect(stA.id, stB.id, 1, type); 
             }
         }
     }
@@ -165,9 +203,9 @@ export class Graph {
         }
 
         for (let i = 0; i < sitpStations.length; i++) {
-            const stA = sitpStations[i];
             
             for (let j = i + 1; j < sitpStations.length; j++) {
+                const stA = sitpStations[i];
                 const stB = sitpStations[j];
 
                 const neighborsOfA = this.adjList.get(stA.id);
@@ -177,13 +215,10 @@ export class Graph {
                 const conectionsSTB = neighborsOfB ? neighborsOfB.size : 0;
                 
                 if(conectionsSTA <= maxConetionsSitp && conectionsSTB <= maxConetionsSitp){
-                    // Esta lógica de distancia usa las coordenadas del canvas (píxeles), no metros.
-                    // Asumimos que la constante 'maxDistanceMeters' ha sido escalada correctamente en BuildStructures.
                     const sqDist = getSqDistance(stA, stB); 
-
                     if (sqDist <= maxDistanceMeters) {
-                        // Conexiones SITP usan peso 1 (temporal)
-                        this.connect(stA.id, stB.id, 1); 
+                        // El tipo de transporte es SITP
+                        this.connect(stA.id, stB.id, 1, TransportTypes.sitp); 
                     }
                 }
             }
@@ -245,4 +280,83 @@ export class Graph {
         }
         return { isValid: true };
     }
+
+    findMaxFlowAnalysis(sourceId: number, sinkId: number): { maxFlow: number, bottleneckEdges: [number, number][] } {
+        if (!this.stations.has(sourceId) || !this.stations.has(sinkId)) {
+            console.error("IDs de origen o destino no válidos.");
+            return { maxFlow: 0, bottleneckEdges: [] };
+        }
+        
+        // El peso de adjList debe haber sido asignado previamente como capacidad.
+        const result = EdmondsKarp.calculateMaxFlow(this, sourceId, sinkId);
+
+        // Mapear los IDs de las estaciones a nombres legibles para el análisis
+        const bottleneckEdgesNamed = result.minCutEdges.map(([u, v]) => {
+            const nameU = this.stations.get(u)?.name || `ID ${u}`;
+            const nameV = this.stations.get(v)?.name || `ID ${v}`;
+            return [`${nameU} -> ${nameV}`, [u, v]] as const;
+        });
+
+        // console.log(`--- Análisis de Congestión: Flujo Máximo ---`);
+        // console.log(`Origen: ${this.stations.get(sourceId)?.name} | Destino: ${this.stations.get(sinkId)?.name}`);
+        // console.log(`Flujo Máximo (Capacidad Máxima): ${result.maxFlow} unidades/hora.`);
+        // console.log(`Cuellos de Botella (Corte Mínimo): ${bottleneckEdgesNamed.length} aristas saturadas.`);
+        
+        if (bottleneckEdgesNamed.length > 0) {
+            console.log("Aristas Críticas:");
+            bottleneckEdgesNamed.forEach(([name, _ids]) => {
+                console.log(`  - ${name}`);
+            });
+        }
+        
+        return { 
+            maxFlow: result.maxFlow, 
+            bottleneckEdges: result.minCutEdges 
+        };
+    }
+
+
+    generateMinimumSpanningTree() {
+        const edges: { u: number; v: number; weight: number }[] = [];
+
+        for (const [u, neighbors] of this.adjListComplete.entries()) {
+            for (const [v, data] of neighbors.entries()) {
+                edges.push({ u, v, weight: data.weight });
+            }
+        }
+
+        edges.sort((a, b) => a.weight - b.weight);
+
+        const parent = new Map<number, number>();
+        const find = (x: number): number => {
+            if (parent.get(x) === x) return x;
+            const root = find(parent.get(x)!);
+            parent.set(x, root);
+            return root;
+        };
+        const union = (a: number, b: number): boolean => {
+            const ra = find(a);
+            const rb = find(b);
+            if (ra === rb) return false;
+            parent.set(ra, rb);
+            return true;
+        };
+
+        for (const id of this.stations.keys()) {
+            parent.set(id, id);
+        }
+
+        const mst: Array<[number, number, number]> = [];
+
+        for (const e of edges) {
+            if (union(e.u, e.v)) {
+                mst.push([e.u, e.v, e.weight]);
+            }
+        }
+
+        console.log("Árbol de Recubrimiento Mínimo generado.");
+        this.mstEdges = mst;   // Guardamos el MST dentro del grafo
+        return mst;
+    }
+
 }
