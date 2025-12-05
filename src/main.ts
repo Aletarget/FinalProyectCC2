@@ -107,7 +107,7 @@ function draw() {
         const [x1, y1] = toScreenCoords(stA.coords);
         
         // CORRECCIÓN: Usar el key (idB) para buscar la estación vecina (Map.forEach(value, key))
-        neighbors.forEach((weight, idB) => { 
+        neighbors.forEach((_weight, idB) => { 
             const stB = graph.stations.get(idB)!; // ✅ CORRECTO: Usamos idB (la clave)
             if (stB) {
                 const [x2, y2] = toScreenCoords(stB.coords);
