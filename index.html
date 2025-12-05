@@ -10,12 +10,23 @@
   <body>
     
     <div class="controls">
-      <input type="text" id="search-input" placeholder="Buscar por ID (ej: 101) o Nombre..." />
+      <input type="text" id="search-input" placeholder="Buscar Estación o Ruta ID..." />
       <button id="search-btn">Buscar</button>
       
       <button id="next-btn" disabled>Siguiente</button>
       <span id="pagination-status"></span>
       <button id="clear-btn">Limpiar</button>
+
+      <hr style="margin: 10px 0;">
+
+      <h3>Búsqueda de Ruta Mínima (Dijkstra)</h3>
+      <div class="dijkstra-controls">
+          <input type="text" id="start-station-input" placeholder="ID Origen" />
+          <input type="text" id="end-station-input" placeholder="ID Destino" />
+          <button id="find-route-btn">Calcular Ruta</button>
+          <span id="dijkstra-status"></span>
+      </div>
+
     </div>
 
     <div class="map-container">

@@ -6,6 +6,10 @@ export interface RouteStopInterface {
     sequence: number;  // Orden de parada dentro de la ruta (1, 2, 3...)
     stopTimeMinutes: number; // Tiempo de parada estimado en minutos
 }
+export interface Route {
+    route_id: string;
+    stops: number[]; // Array de IDs de estaciones
+}
 
 export interface RouteInterface {
     routeId: string; // Clave de la ruta (ej: "A60", "L1-S", "C11")

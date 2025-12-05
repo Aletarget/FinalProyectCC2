@@ -1,3 +1,5 @@
+// /src/main.ts
+import { Dijkstra } from "./algorithms/dijkstra";
 import { BuildStructures } from "./Btree+/buildFromData";
 import { RouteInterface } from "./interfaces/Routes.interface";
 import { StationInterface } from "./interfaces/Stations.interface";
@@ -15,13 +17,24 @@ const clearBtn = document.getElementById("clear-btn") as HTMLButtonElement;
 const nextBtn = document.getElementById("next-btn") as HTMLButtonElement; 
 const paginationStatus = document.getElementById("pagination-status") as HTMLSpanElement;
 
+// Referencias para DIJKSTRA (2. REFERENCIAS AL DOM)
+const startStationInput = document.getElementById("start-station-input") as HTMLInputElement;
+const endStationInput = document.getElementById("end-station-input") as HTMLInputElement;
+const findRouteBtn = document.getElementById("find-route-btn") as HTMLButtonElement;
+const dijkstraStatus = document.getElementById("dijkstra-status") as HTMLSpanElement;
+
 // Construir estructuras
 const { graph, tree, routesTree } = BuildStructures.buildStructures(4);
+const dijkstraSolver = new Dijkstra(graph); // <--- 3. INICIALIZAR SOLVER
+
 let highlightedRoute: RouteInterface | null = null;
-console.log(routesTree)
+console.log(graph)
 
 // Estado: Estación actualmente seleccionada (para resaltar)
 let highlightedStation: StationInterface | null = null;
+
+// Estado de la ruta de Dijkstra (4. NUEVO ESTADO)
+let dijkstraPath: StationInterface[] | null = null;
 
 
 // estado de búsqueda por similitud y paginación
@@ -77,20 +90,25 @@ function draw() {
     if (highlightedRoute) {
         highlightedRoute.stops.forEach(stopId => routeStopsSet.add(stopId.stationId));
     }
+    // Agregar el camino de Dijkstra al set para resaltado (NUEVO)
+    if (dijkstraPath) {
+        dijkstraPath.forEach(st => routeStopsSet.add(st.id));
+    }
 
     // -------------------------------------------------
-    // 1. DIBUJAR CONEXIONES (ARISTAS)
+    // 1. DIBUJAR CONEXIONES (ARISTAS) <--- LÓGICA CORREGIDA Y VISIBLE
     // -------------------------------------------------
     ctx.strokeStyle = "#eee"; // Un gris más claro para que resalte la ruta
     ctx.lineWidth = 1;
 
-    for (const [id, neighbors] of graph.adjList.entries()) {
-        const stA = graph.stations.get(id)!;
+    for (const [idA, neighbors] of graph.adjList.entries()) { // idA es el ID de la estación de origen
+        const stA = graph.stations.get(idA)!;
         if (!stA) continue;
         const [x1, y1] = toScreenCoords(stA.coords);
         
-        neighbors.forEach(nb => {
-            const stB = graph.stations.get(nb)!;
+        // CORRECCIÓN: Usar el key (idB) para buscar la estación vecina (Map.forEach(value, key))
+        neighbors.forEach((weight, idB) => { 
+            const stB = graph.stations.get(idB)!; // ✅ CORRECTO: Usamos idB (la clave)
             if (stB) {
                 const [x2, y2] = toScreenCoords(stB.coords);
                 ctx.beginPath();
@@ -105,27 +123,102 @@ function draw() {
     // 2. DIBUJAR TRAZADO DE LA RUTA SELECCIONADA (LÍNEA NARANJA)
     // -------------------------------------------------
     if (highlightedRoute) {
+        
+        const stops = highlightedRoute.stops;
+        
+        // --- LÓGICA DE DERECHO A SALTO (TM o Metro) ---
+        const firstStopId = stops[0]?.stationId;
+        const firstStationType = graph.stations.get(firstStopId)?.type;
+        
+        const isSkipAllowedRoute = 
+            firstStationType === TransportTypes.transM || 
+            firstStationType === TransportTypes.metro;
+        // ---------------------------------------------------
+
         ctx.strokeStyle = "orange";
-        ctx.lineWidth = 5; // Más grueso
+        ctx.lineWidth = 5; 
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
-        ctx.beginPath();
+        
+        if (stops.length > 0) {
+            
+            let previousStationId: number | null = null;
 
-        let first = true;
-        for (const stopId of highlightedRoute.stops) {
-            const st = graph.stations.get(stopId.stationId);
-            if (st) {
-                const [x, y] = toScreenCoords(st.coords);
-                if (first) {
-                    ctx.moveTo(x, y);
-                    first = false;
-                } else {
-                    ctx.lineTo(x, y);
+            for (let i = 0; i < stops.length; i++) {
+                const currentStationId = stops[i].stationId;
+                const currentStation = graph.stations.get(currentStationId);
+
+                if (!currentStation) {
+                    //console.warn(`Estación ID ${currentStationId} de la ruta no encontrada.`);
+                    previousStationId = null; // Reiniciar la conexión si una parada es inválida
+                    continue;
                 }
+
+                const [x, y] = toScreenCoords(currentStation.coords);
+                
+                // Si es la primera parada, solo movemos el cursor
+                if (previousStationId === null) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                } else {
+                    const neighbors = graph.adjList.get(previousStationId);
+                    const isDirectlyConnected = neighbors && neighbors.has(currentStationId);
+                    
+                    const isTMSkipOrMetroSkipAllowed = isSkipAllowedRoute; 
+                    
+                    if (isDirectlyConnected || isTMSkipOrMetroSkipAllowed) { 
+                        // Dibujamos la línea
+                        //if (!isDirectlyConnected && isTMSkipOrMetroSkipAllowed) {
+                        //    console.log(`Dibujando salto (${firstStationType}) en ${highlightedRoute.routeId}: ${previousStationId} -> ${currentStationId}`);
+                        //}
+                        
+                        ctx.lineTo(x, y);
+                        ctx.stroke(); // Dibuja el segmento actual
+                        
+                        // Movemos a la posición de inicio para el siguiente segmento
+                        ctx.beginPath();
+                        ctx.moveTo(x, y);
+                    } else {
+                        // Si NO hay conexión y NO es TM/Metro, cortamos la línea
+                        //console.warn(`Ruta ${highlightedRoute.routeId} inválida (Fallo de dibujo): No hay conexión en el grafo entre ${previousStationId} y ${currentStationId}.`);
+                        ctx.beginPath();
+                        ctx.moveTo(x, y); // El siguiente segmento comenzará desde aquí
+                    }
+                }
+                
+                previousStationId = currentStationId; // Actualizar para el siguiente paso
             }
         }
+    }
+
+    // 2b. DIBUJAR RUTA MÍNIMA DE DIJKSTRA (LÍNEA PÚRPURA) (NUEVO)
+    if (dijkstraPath && dijkstraPath.length > 1) {
+    
+    for (let i = 0; i < dijkstraPath.length - 1; i++) {
+        const stA = dijkstraPath[i];
+        const stB = dijkstraPath[i + 1];
+
+        const [x1, y1] = toScreenCoords(stA.coords);
+        const [x2, y2] = toScreenCoords(stB.coords);
+
+        // --- COLOR SEGÚN EL TIPO DE TRANSPORTE ---
+        let color = "black";
+
+        if (stA.type === TransportTypes.transM) color = "red";
+        else if (stA.type === TransportTypes.sitp) color = "blue";
+        else if (stA.type === TransportTypes.metro) color = "#32ff32";
+        else color = "gray"; // caminar o desconocido
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 6;
+        ctx.lineCap = "round";
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
         ctx.stroke();
     }
+}
 
     // -------------------------------------------------
     // 3. DIBUJAR ESTACIONES (NODOS)
@@ -146,19 +239,30 @@ function draw() {
 
         // A. CASO: Estación única seleccionada (Búsqueda por nombre/ID)
         if (highlightedStation && st.id === highlightedStation.id) {
-            ctx.fillStyle = "red";       
+            ctx.fillStyle = "red";       
             ctx.strokeStyle = "black";
             ctx.lineWidth = 3;
             ctx.arc(x, y, selectedRadius, 0, Math.PI * 2);
             ctx.fill();
             ctx.stroke();
         } 
-        // B. CASO: Estación pertenece a la ruta resaltada
+        // B. CASO: Estación pertenece a la ruta resaltada (Dijkstra o Route)
         else if (routeStopsSet.has(st.id)) {
-            ctx.fillStyle = "gold"; // Color de parada de ruta
-            ctx.strokeStyle = "darkorange";
-            ctx.lineWidth = 2;
-            ctx.arc(x, y, highlightRadius, 0, Math.PI * 2);
+            
+            if (dijkstraPath && dijkstraPath.includes(st)) {
+                // Nodo en la ruta mínima
+                ctx.fillStyle = "magenta"; 
+                ctx.strokeStyle = "purple";
+                ctx.lineWidth = 3;
+                ctx.arc(x, y, highlightRadius, 0, Math.PI * 2);
+            } else {
+                 // Color de parada de ruta normal
+                ctx.fillStyle = "gold"; 
+                ctx.strokeStyle = "darkorange";
+                ctx.lineWidth = 2;
+                ctx.arc(x, y, highlightRadius, 0, Math.PI * 2);
+            }
+
             ctx.fill();
             ctx.stroke();
         } 
@@ -263,6 +367,8 @@ function centerOnStation(station: StationInterface) {
     // offsetX = targetScreenX - mapX * scale
     viewTransform.offsetX = targetScreenX - station.coords[0] * currentScale;
     viewTransform.offsetY = targetScreenY - station.coords[1] * currentScale;
+
+    draw(); // Redibujar después de centrar
 }
 
 
@@ -318,8 +424,12 @@ function levenshteinDistance(a: string, b: string): number {
  * Ejecuta la búsqueda por similitud o ID y gestiona los resultados.
  */
 function searchStations() {
-    const query = searchInput.value.trim(); // No normalizar todavía para respetar mayúsculas si es necesario
+    const query = searchInput.value.trim(); 
     if (!query) return;
+
+    // Limpiamos la ruta de Dijkstra si se inicia una nueva búsqueda general
+    dijkstraPath = null;
+    dijkstraStatus.textContent = "";
 
     // A. Búsqueda por ID de Estación (Numérico)
     if (!isNaN(Number(query))) {
@@ -327,7 +437,6 @@ function searchStations() {
         const foundNode = tree.search(id);
         
         if (foundNode) {
-            // Limpiamos ruta anterior
             highlightedRoute = null; 
             searchResults = [{ station: foundNode, score: 1.0 }];
             showResult(0);
@@ -336,24 +445,44 @@ function searchStations() {
         }
     }
     
-    // B. Búsqueda por Código de Ruta (String exacto en routesTree)
-    // Intentamos buscar tal cual, o en mayúsculas (ej: "a60" -> "A60")
+    // B. Búsqueda por ID de Ruta (Ej: "B1", "L82")
     const routeQuery = query.toUpperCase(); 
-    const foundRoute = routesTree.search(routeQuery);
+    const foundRoute = routesTree.search(routeQuery); 
 
     if (foundRoute) {
-        console.log("Ruta encontrada:", foundRoute);
-        highlightedRoute = foundRoute;
-        highlightedStation = null; // Quitamos selección de estación única
-        searchResults = []; // Limpiamos resultados de estaciones
-        paginationStatus.textContent = `Ruta: ${foundRoute.routeId}`; // O .name
+        //console.log("Ruta encontrada, validando integridad...");
+
+        const validationResult = graph.checkRouteValidity(
+            {
+               ...foundRoute
+            });
+
+        if (validationResult.isValid) {
+            //RUTA VÁLIDA: Se asigna la ruta para dibujar
+            highlightedRoute = foundRoute;
+            highlightedStation = null; 
+            searchResults = []; 
+            paginationStatus.textContent = `Ruta: ${foundRoute.routeId} - Valida`; 
+        } else {
+            // ❌ RUTA INVÁLIDA
+            highlightedRoute = null; 
+            highlightedStation = null;
+            searchResults = [];
+
+            const errorMessage = validationResult.errorDetail || `Ruta ${foundRoute.routeId} inválida por una conexión faltante.`;
+            alert(errorMessage); 
+            console.error(errorMessage);
+
+            paginationStatus.textContent = `Ruta: ${foundRoute.routeId} - Invalida`;
+        }
         
-        draw(); // Redibujar mapa con la ruta
+        draw();
         return;
     }
 
-    // C. Búsqueda por Similitud de Nombre de Estación (Tu lógica existente)
-    // Si no es ID ni Ruta, asumimos que busca una estación por nombre
+    
+
+    // C. Búsqueda por Similitud de Nombre de Estación 
     highlightedRoute = null; // Limpiamos ruta si busca estación
     searchResults = searchStationsBySimilarity(query);
     currentResultIndex = -1; 
@@ -381,7 +510,7 @@ function showResult(index: number) {
         const stationToShow = result.station;
 
         highlightedStation = stationToShow;
-        console.log(`Resultado ${index + 1}/${searchResults.length} (Score: ${result.score.toFixed(3)}):`, stationToShow.name);
+        //console.log(`Resultado ${index + 1}/${searchResults.length} (Score: ${result.score.toFixed(3)}):`, stationToShow.name);
         
         centerOnStation(stationToShow); 
 
@@ -399,7 +528,7 @@ function showResult(index: number) {
 function searchStationsBySimilarity(query: string): SearchResult[] {
     const results: SearchResult[] = [];
     const normalizedQuery = normalizeString(query);
-    const MIN_SCORE = 0.5; // Umbral mínimo de similitud
+    const MIN_SCORE = 0.55; // Umbral mínimo de similitud
 
     for (const st of graph.stations.values()) {
         const normalizedName = normalizeString(st.name);
@@ -421,6 +550,51 @@ function searchStationsBySimilarity(query: string): SearchResult[] {
     return results;
 }
 
+// ------------------------------------------
+// LÓGICA DE DIJKSTRA (5. FUNCIÓN PRINCIPAL)
+// ------------------------------------------
+
+function findShortestRoute() {
+    // 1. Limpiar estados
+    dijkstraPath = null;
+    highlightedRoute = null; 
+    highlightedStation = null;
+    dijkstraStatus.textContent = "Calculando...";
+
+    // 2. Obtener y validar IDs
+    const startId = Number(startStationInput.value.trim());
+    const endId = Number(endStationInput.value.trim());
+
+    if (isNaN(startId) || isNaN(endId) || startId <= 0 || endId <= 0) {
+        dijkstraStatus.textContent = "❌ IDs inválidos. Ingrese IDs de estación válidos.";
+        draw();
+        return;
+    }
+    
+    if (startId === endId) {
+        dijkstraStatus.textContent = "💡 Origen y Destino son la misma estación (Tiempo: 0 min).";
+        draw();
+        return;
+    }
+
+    // 3. Ejecutar Dijkstra
+    const result = dijkstraSolver.findShortestPath(startId, endId);
+
+    // 4. Mostrar resultado
+    if (result) {
+        dijkstraPath = result.path;
+        dijkstraStatus.textContent = `✅ Ruta encontrada. Tiempo total: ${result.totalTime.toFixed(2)} minutos.`;
+        
+        // Centrar en la estación de destino
+        centerOnStation(result.path[result.path.length - 1]);
+    } else {
+        dijkstraPath = null;
+        dijkstraStatus.textContent = "❌ No se encontró ruta. Verifique los IDs o la conectividad.";
+    }
+
+    draw();
+}
+
 
 // ------------------------------------------
 // MANEJADORES DE EVENTOS
@@ -434,10 +608,14 @@ nextBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
     highlightedStation = null;
     highlightedRoute = null;
+    dijkstraPath = null; // Limpiar Dijkstra
     searchInput.value = "";
+    startStationInput.value = ""; // Limpiar inputs de Dijkstra
+    endStationInput.value = "";
     searchResults = [];
     currentResultIndex = -1;
     paginationStatus.textContent = "";
+    dijkstraStatus.textContent = "";
     nextBtn.disabled = true;
     
     //Restablecer la vista a la configuración inicial
@@ -445,6 +623,8 @@ clearBtn.addEventListener('click', () => {
     draw();
 });
 
+// NUEVO: Manejador para el botón de Dijkstra (6. EVENT LISTENER)
+findRouteBtn.addEventListener('click', findShortestRoute);
 
 
 // interactividad (hover)

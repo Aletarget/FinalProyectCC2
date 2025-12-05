@@ -2,8 +2,10 @@
 
 import { RouteInterface } from "../interfaces/Routes.interface";
 import { StationInterface } from "../interfaces/Stations.interface";
+import { constsWeights } from "../interfaces/weights.enum";
 import { BPlusTree } from "./Bplustree";
 import { Graph } from "./Graph";
+import { CalculateAdjListWithWeights } from "./TransformData/calculateWeigths";
 import { flattenData } from "./TransformData/CreateJson";
 
 const CANVAS_WIDTH = 1250;
@@ -13,10 +15,10 @@ const PADDING_RATIO = 0.04;
 export class BuildStructures {
   
     // El método ahora recibe el 'order' directamente
-    public static buildStructures(order = 4) {
-        //CAMBIO CRÍTICO: Usar rawToJsonAll() para incluir estaciones TM y SITP
+  public static buildStructures(order = 4) {
         const rawData: StationInterface[] = flattenData.rawToJsonAllStations();
         const routes: RouteInterface[] = flattenData.getRoutes();
+        
         // 1. CALCULAR LOS LÍMITES GEOGRÁFICOS REALES
         let lonMin = Infinity, lonMax = -Infinity;
         let latMin = Infinity, latMax = -Infinity;
@@ -32,20 +34,25 @@ export class BuildStructures {
         const lonRange = lonMax - lonMin;
         const latRange = latMax - latMin;
         
-        // 2. CALCULAR ESCALA Y OFFSET PARA CENTRAR
+        // 2. CALCULAR ESCALA Y OFFSET
         const effectiveWidth = CANVAS_WIDTH * (1 - 2 * PADDING_RATIO);
         const effectiveHeight = CANVAS_HEIGHT * (1 - 2 * PADDING_RATIO);
 
-        // Factor de escala: Usamos el menor para mantener la relación de aspecto
+        // Factor de escala (se usa el menor para mantener la relación de aspecto)
         const scaleX = effectiveWidth / lonRange;
         const scaleY = effectiveHeight / latRange;
         const scale = Math.min(scaleX, scaleY); 
 
-        // Calcular dimensiones escaladas
+        const maxRealDistanceMeters = lonRange * constsWeights.COORD_TO_METERS;
         const scaledWidth = lonRange * scale;
-        const scaledHeight = latRange * scale;
+        
+        // PIXEL_TO_METER_RATIO = (Distancia real en Metros) / (Distancia mapeada en Píxeles)
+        const PIXEL_TO_METER_RATIO = maxRealDistanceMeters / scaledWidth;
+        console.log(`Factor Píxel a Metro: ${PIXEL_TO_METER_RATIO.toFixed(4)} metros/píxel`);
+
 
         // Calcular el desplazamiento (offset) para centrar el mapa
+        const scaledHeight = latRange * scale;
         const offsetX = (CANVAS_WIDTH - scaledWidth) / 2;
         const offsetY = (CANVAS_HEIGHT - scaledHeight) / 2;
         
@@ -63,28 +70,32 @@ export class BuildStructures {
         const pixelY = ((latMax - rawLat) * scale) + offsetY; // Inversión del eje Y
         
         const mappedStation: StationInterface = {
-            ...st,
-            coords: [Math.round(pixelX), Math.round(pixelY)]
+                    ...st,
+                    coords: [Math.round(pixelX), Math.round(pixelY)] // Coordenadas en PÍXELES
         };
 
         tree.insert(mappedStation.id, mappedStation);
         graph.addStation(mappedStation);
         });
 
-        //Llenar arbol de rutas
+        // Llenar arbol de rutas
         routes.forEach((route)=>{
-            const routeKey = route.routeId;
-            routesTree.insert(routeKey, route)
+                    const routeKey = route.routeId;
+                    routesTree.insert(routeKey, route)
         })
 
-
-
+        // 4. CREAR CONEXIONES (usando peso TEMPORAL 1 en el grafo)
         graph.autoConnect();
-        graph.autoConnectSITP();
-        this.connectManually(graph); // Llamada al método estático
+        graph.autoConnectSITP(); 
 
-        return { tree, graph, routesTree };
-    }
+        this.connectManually(graph); 
+
+        // 5. APLICAR PESOS REALES
+        const weightCalculator = new CalculateAdjListWithWeights();
+        // Pasamos el factor de escala para que la clase de pesos pueda calcular distancias reales.
+        weightCalculator.applyWeightsToGraph(graph, PIXEL_TO_METER_RATIO); 
+            return { tree, graph, routesTree };
+        }
 
     private static connectManually(graph: Graph){
         //Conexiones entre distintas troncales
@@ -93,20 +104,20 @@ export class BuildStructures {
         // A. Transbordos Internos (Mismo nombre, diferente troncal)
         graph.connectInternalTransfer("Ricaurte");    // Ricaurte (F) <-> Ricaurte (NQS)
         graph.connectInternalTransfer("Avenida Jiménez"); // Av Jimenez (Caracas) <-> Av Jimenez (Calle 13)
-        graph.connectInternalTransfer("San Victorino");   // Por seguridad, si hay varias plataformas
+        graph.connectInternalTransfer("San Victorino");       // Por seguridad, si hay varias plataformas
 
         // B. Conexiones NQS Central (Corrigiendo el hueco de la 30)
         graph.connectByName("Comuneros", "Ricaurte");
         graph.connectByName("Ricaurte", "Guatoque"); // Guatoque - Veraguas
 
         // C. Conexiones Eje Ambiental / Centro
-        graph.connectByName("Tygua", "San Victorino");     // Tygua - San José <-> San Victorino
+        graph.connectByName("Tygua", "San Victorino");         // Tygua - San José <-> San Victorino
         graph.connectByName("Bicentenario", "San Victorino");
         graph.connectByName("Av Jiménez", "Las Nieves");
         graph.connectByName("Av Jiménez", "Museo del Oro");
         graph.connectByName("Avenida Jiménez", "Av Jiménez");
         graph.connectByName("San Victorino", "Las Nieves");
-        graph.connectByName("Aguas", "Museo del Oro");     // Aguas <-> Museo del Oro
+        graph.connectByName("Aguas", "Museo del Oro");         // Aguas <-> Museo del Oro
 
         // Basta con una: Av Jiménez (general) se conecta a Calle 19.
         graph.connectByName("Avenida Jiménez", "Calle 19");
@@ -114,7 +125,7 @@ export class BuildStructures {
         // D. Intercambiador Calle 76 / Héroes / Polo (El triángulo del Norte)
         graph.connectByName("Polo", "Calle 76");       // Polo <-> Calle 76
         graph.connectByName("Polo", "Héroes");
-        graph.connectByName("Calle 76", "Héroes");       // Refuerzo directo
+        graph.connectByName("Calle 76", "Héroes");           // Refuerzo directo
 
         // E. Otras conexiones Norte / NQS
         graph.connectByName("NQS - Calle 75", "San Martín"); // Zona M <-> San Martín
@@ -132,6 +143,7 @@ export class BuildStructures {
         // Transbordos de Metro con transmilenio
         graph.connect(62,20012);
         graph.connect(149,20011);
+        graph.connect(138, 20009);
 
 
         // Transbordos de Sitp con transmilenio
@@ -141,8 +153,11 @@ export class BuildStructures {
         graph.connect(123, 5024);
         graph.connect(125, 5024);
 
-        graph.connect(138, 20009);
-
+        // Conectar estaciones de sitp con sipt
+        graph.connect(5001, 5016);
+        graph.connect(5004, 5006);
+        graph.connect(5009, 5002);
+        graph.connect(5018, 5012);
 
 
     }

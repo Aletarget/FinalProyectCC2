@@ -26,12 +26,21 @@
     "capacity": 80,
     "frequencyMinutes": 12,
     "stops": [
-      { "stationId": 201, "sequence": 1, "stopTimeMinutes": 2 },
-      { "stationId": 205, "sequence": 2, "stopTimeMinutes": 1 },
-      { "stationId": 210, "sequence": 3, "stopTimeMinutes": 1 },
-      { "stationId": 215, "sequence": 4, "stopTimeMinutes": 1 },
-      { "stationId": 220, "sequence": 5, "stopTimeMinutes": 2 }
-    ]
+      { "stationId": 5011, "sequence": 1, "stopTimeMinutes": 2 },
+      { "stationId": 5009, "sequence": 2, "stopTimeMinutes": 1 },
+      { "stationId": 5002, "sequence": 3, "stopTimeMinutes": 1 },
+      { "stationId": 5000, "sequence": 4, "stopTimeMinutes": 1 },
+      { "stationId": 5006, "sequence": 5, "stopTimeMinutes": 2 },
+      { "stationId": 5004, "sequence": 6, "stopTimeMinutes": 2 },
+      { "stationId": 5001, "sequence": 7, "stopTimeMinutes": 2 },
+      { "stationId": 5016, "sequence": 8, "stopTimeMinutes": 2 },
+      { "stationId": 5015, "sequence": 9, "stopTimeMinutes": 2 },
+      { "stationId": 5013, "sequence": 10, "stopTimeMinutes": 2 },
+      { "stationId": 5012, "sequence": 11, "stopTimeMinutes": 2 },
+      { "stationId": 5018, "sequence": 12, "stopTimeMinutes": 2 },
+      { "stationId": 5019, "sequence": 11, "stopTimeMinutes": 2 },
+      { "stationId": 102, "sequence": 12, "stopTimeMinutes": 2 }
+  ]
   },
   {
     "routeId": "METRO-L1",
@@ -40,26 +49,34 @@
     "capacity": 500,
     "frequencyMinutes": 3,
     "stops": [
-      { "stationId": 301, "sequence": 1, "stopTimeMinutes": 1 },
-      { "stationId": 305, "sequence": 2, "stopTimeMinutes": 1 },
-      { "stationId": 310, "sequence": 3, "stopTimeMinutes": 1 },
-      { "stationId": 315, "sequence": 4, "stopTimeMinutes": 1 },
-      { "stationId": 320, "sequence": 5, "stopTimeMinutes": 1 },
-      { "stationId": 325, "sequence": 6, "stopTimeMinutes": 2 }
+      { "stationId": 20001, "sequence": 1, "stopTimeMinutes": 1 },
+      { "stationId": 20003, "sequence": 2, "stopTimeMinutes": 1 },
+      { "stationId": 20007, "sequence": 3, "stopTimeMinutes": 1 },
+      { "stationId": 20008, "sequence": 4, "stopTimeMinutes": 1 },
+      { "stationId": 20011, "sequence": 5, "stopTimeMinutes": 1 },
+      { "stationId": 20015, "sequence": 6, "stopTimeMinutes": 2 }
     ]
   },
   {
-    "routeId": "T-C15",
-    "name": "Eje Central - Sur",
+    "routeId": "B-F28",
+    "name": "Portal Amercias - Terminal",
     "type": "TRANSMILENIO",
     "capacity": 250,
     "frequencyMinutes": 5,
     "stops": [
-      { "stationId": 101, "sequence": 1, "stopTimeMinutes": 1 },
-      { "stationId": 102, "sequence": 2, "stopTimeMinutes": 1 },
-      { "stationId": 103, "sequence": 3, "stopTimeMinutes": 1 },
-      { "stationId": 104, "sequence": 4, "stopTimeMinutes": 2 },
-      { "stationId": 105, "sequence": 5, "stopTimeMinutes": 1 }
+      { "stationId": 78, "sequence": 1, "stopTimeMinutes": 1 },
+      { "stationId": 80, "sequence": 2, "stopTimeMinutes": 1 },
+      { "stationId": 83, "sequence": 3, "stopTimeMinutes": 1 },
+      { "stationId": 93, "sequence": 5, "stopTimeMinutes": 2 },
+      { "stationId": 87, "sequence": 4, "stopTimeMinutes": 2 },
+      { "stationId": 23, "sequence": 6, "stopTimeMinutes": 1 },
+      { "stationId": 34, "sequence": 7, "stopTimeMinutes": 1 },
+      { "stationId": 35, "sequence": 8, "stopTimeMinutes": 1 },
+      { "stationId": 38, "sequence": 9, "stopTimeMinutes": 1 },
+      { "stationId": 47, "sequence": 10, "stopTimeMinutes": 1 },
+      { "stationId": 50, "sequence": 11, "stopTimeMinutes": 1 },
+      { "stationId": 147, "sequence": 12, "stopTimeMinutes": 1 }
+      
     ]
   },
   {
